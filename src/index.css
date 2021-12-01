@@ -1,14 +1,19 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/font/Poppins-Regular.ttf") format("ttf");
+       
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("assets/font/Montserrat-Regular.ttf") format("ttf");
+       
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Poppins", Sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: black;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  color:white;
 }

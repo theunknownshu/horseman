@@ -6,3 +6,10 @@
 .nav-item .nav-link:hover{
     border-bottom: 2px solid #6EC1E4;
 }
+.my-logo
+{
+    color: #2884E4!important;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+}
