@@ -1,0 +1,8 @@
+.btn-discord{
+    border-color: blue;
+    background-color: black;
+    border-radius: 20px;
+}
+.nav-item .nav-link:hover{
+    border-bottom: 2px solid #6EC1E4;
+}
