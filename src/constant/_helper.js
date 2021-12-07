@@ -1,23 +1,28 @@
 export const roadmap_json = [
   {
-    percent: "",
-    text: "Horseman club community is open. Join us on Discord to enter in the whitelist and discover the reveal of pre-sale and public sale."
+    percent: "0%",
+    text: "Horseman club community is open. Join us on Discord to enter in the whitelist and discover the reveal of pre-sale and public sale.",
+    flag:"flag-0.png"
   },
   {
     percent: "25%",
-    text: "When 25% is reached we will make the first Giveaway for HORSERS. An airderop of 10 NFTS wills be given."
+    text: "When 25% is reached we will make the first Giveaway for HORSERS. An airderop of 10 NFTS wills be given.",
+    flag:"flag-1.png"
   },
   {
     percent: "50%",
-    text: "When 50% of the Horseman is reached we'll be donating $20,000 to a charity chosen by the community"
+    text: "When 50% of the Horseman is reached we'll be donating $20,000 to a charity chosen by the community",
+    flag:"flag-2.png"
   },
   {
     percent: "70%",
-    text: "When 75% of the Horsemen sell out, we'll start setting up a member exclusive merchandize store and make a giveawya for HORSERS"
+    text: "When 75% of the Horsemen sell out, we'll start setting up a member exclusive merchandize store and make a giveawya for HORSERS",
+    flag:"flag-3.png"
   },
   {
     percent: "100%",
-    text: "When 100% of the Horsemen sell out, we'll open the Private Discord for Holders. Special Events and Giveaways will be published monthly. Just for Hlders!"
+    text: "When 100% of the Horsemen sell out, we'll open the Private Discord for Holders. Special Events and Giveaways will be published monthly. Just for Hlders!",
+    flag:"flag-3.png"
   },
   {
     percent: "",
