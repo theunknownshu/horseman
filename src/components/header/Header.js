@@ -1,18 +1,21 @@
 import "./Header.css";
 import logo from "../../assets/images/logo.png";
+
+import { Button } from '@mui/material';
+
 function Header() {
   return (
-    <div>
-      <nav className="navbar navbar-expand-md navbar-dark  row">
+    <div className = "myheader">
+      <nav className="navbar navbar-expand-md navbar-light  row" style = {{margin: "0",padding:"0"}}>
         <div className="col-md-3 ">
           <img
             src={logo}
-            style = {{width:"30px"}}
             alt="logo image"
+            className = "rounded-circle logo-image"
           />
-          <h2 className="navbar-brand my-logo" href="#">
+          {/* <h2 className="navbar-brand my-logo" href="#">
             The Horseman Club
-          </h2>
+          </h2> */}
         </div>
 
         <div className="col-md-6 col-sm-6">
@@ -61,12 +64,21 @@ function Header() {
           </div>
         </div>
         <div className="col-md-3 col-sm-6">
-          <button
+          {/* <button
             type="button"
             class="btn btn-dark round btn-discord rounded-pill"
           >
             Join Discord
           </button>
+          &nbsp; */}
+          <Button sx = {{borderRadius:"20px"}} variant="contained">Join Discord</Button>
+          <Button  variant="contained" sx = {{borderRadius:"20px"}}> <i className = 	"	fab fa-twitter"></i></Button>
+          {/* <button
+            type="button"
+            class="btn btn-dark btn-twitter"
+          >
+            <i className = 	"	fab fa-twitter"></i>
+          </button> */}
         </div>
       </nav>
     </div>

@@ -14,6 +14,6 @@ body {
   font-family: "Poppins", Sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
-  color:white;
+  background-color: white;
+  /* color:white; */
 }
