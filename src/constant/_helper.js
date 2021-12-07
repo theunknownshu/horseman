@@ -91,5 +91,6 @@ export const team_json = [
     avatar: "developer.JPG"
   }
 ];
-
+export const carousel_baseURL = "./assets/images/carousel/";
+export const carousel_imagename = ["375.png","378.png","379.png","380.png","386.png","387.png","389.png"];
 // export const nftlist_img_base = "";

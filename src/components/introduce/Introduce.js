@@ -1,12 +1,11 @@
 import "./Introduce.css";
-import img_intro from "../../assets/images/img_intro.jpg";
 import { Typography, Button } from "@mui/material";
 import { introduce_json } from "../../constant/_helper";
 
 function Introduce() {
   return (
     <div className="container">
-      <img className="img-fluid" src={img_intro} />
+      
       <Typography
         variant="h3"
         sx={{ fontSize: ["1.5rem", "2rem", "3rem", "3rem"] }}
