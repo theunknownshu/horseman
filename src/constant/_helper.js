@@ -54,10 +54,37 @@ export const faq_json = [
 export const introduce_json = {
   title: "10,000 unique and indomable Horsemen",
   content1:
-    "In the depths of metaverse there's a community of winning horsemen. In a fast paced and transitioned world just the fastest ones will be the first ones on reaching power in the future."
-    ,
-    content2: "The Horseman Club is a distintive collection of 10,000 art pieces that lie in the ERC-721. Each one of this tokens* is unique and indomable and rules his own life. This are thoughtfully designed, specifically picked, and impeccably shaped and there are more than 200 distinctive creatives.",
-    content3:" We are e4xcited for future and the community is the core aspect of Horseman Club. We want that every holder has the power and is representative of Horseman with access on giveaways, events and a lot more. Join us on our adventure and our club and let's rule the metaverse."
+    "In the depths of metaverse there's a community of winning horsemen. In a fast paced and transitioned world just the fastest ones will be the first ones on reaching power in the future.",
+  content2:
+    "The Horseman Club is a distintive collection of 10,000 art pieces that lie in the ERC-721. Each one of this tokens* is unique and indomable and rules his own life. This are thoughtfully designed, specifically picked, and impeccably shaped and there are more than 200 distinctive creatives.",
+  content3:
+    " We are e4xcited for future and the community is the core aspect of Horseman Club. We want that every holder has the power and is representative of Horseman with access on giveaways, events and a lot more. Join us on our adventure and our club and let's rule the metaverse."
 };
+export const team_json = [
+  {
+    role: "developer",
+    avatar: "developer.JPG"
+  },
+  {
+    role: "developer",
+    avatar: "developer.JPG"
+  },
+  {
+    role: "developer",
+    avatar: "developer.JPG"
+  },
+  {
+    role: "developer",
+    avatar: "developer.JPG"
+  },
+  {
+    role: "developer",
+    avatar: "developer.JPG"
+  },
+  {
+    role: "developer",
+    avatar: "developer.JPG"
+  }
+];
 
 // export const nftlist_img_base = "";

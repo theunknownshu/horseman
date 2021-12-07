@@ -20,7 +20,7 @@ export default function Faqaccordion() {
               <Typography>{faq.question}</Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography>{faq.question}</Typography>
+              <Typography align= "left">{faq.answer}</Typography>
             </AccordionDetails>
           </Accordion>
         );
