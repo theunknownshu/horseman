@@ -23,13 +23,13 @@ function Team() {
         {team_json.map((team, index) => {
           return (
             <Grid item xs={4}>
-              <Card>
+              <Card sx = {{borderRadius: "20px",padding:"10px"}}>
                 <CardMedia
                   component="img"
-                  height="140"
+                //   height="50"
                   image={team.avatar}
                   alt="green iguana"
-                  sx={{ borderRadius: "50%" }}
+                  sx={{ borderRadius: "10%" }}
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
