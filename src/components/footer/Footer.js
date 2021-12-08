@@ -5,7 +5,7 @@ function Footer() {
   return (
     <div className="container mt-5">
       <Stack
-        direction="row"
+        direction={{ xs: 'column', sm: 'row' }}
         justifyContent="space-between"
         alignItems="Center"
         textAlign="left"
