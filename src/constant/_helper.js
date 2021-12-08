@@ -89,5 +89,5 @@ export const team_json = [
   }
 ];
 export const carousel_baseURL = "./assets/images/carousel/";
-export const carousel_imagename = ["375.png","378.png","379.png","380.png","386.png","387.png","389.png"];
+export const carousel_imagename = ["375.png","378.png","379.png","380.png","386.png","387.png","389.png","395.png","398.png","403.png","404.png"];
 // export const nftlist_img_base = "";

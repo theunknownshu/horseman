@@ -6,5 +6,7 @@
   max-width:1400px;
 }
 .content-section{
-  background-color:green;
+  /* background-color:green; */
+  /* background-image:linear-gradient(to right, #040C04 #01D901); */
+  background: linear-gradient(#040C04, #01D901);
 }

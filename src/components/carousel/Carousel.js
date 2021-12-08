@@ -10,21 +10,23 @@ function Customcarousel() {
     arrows:false,
     infinite: true,
     speed: 500,
-    slidesToShow: 6,
+    slidesToShow: 10,
     slidesToScroll: 1,
-    initialSlide: 0,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    // initialSlide: 0,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 8,
           slidesToScroll: 1,
         }
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 5,
           slidesToScroll: 1,
         }
       },

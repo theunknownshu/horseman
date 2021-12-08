@@ -21,7 +21,7 @@ export default function Faqaccordion() {
       <div className="container px-5 mt-5">
         {faq_json.map((faq, index) => {
           return (
-            <Accordion sx={{ backgroundColor: "green", color: "white" }}>
+            <Accordion sx={{ backgroundColor: "transparent", color: "white" }}>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
