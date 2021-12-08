@@ -7,7 +7,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { faq_json } from "../../constant/_helper";
 export default function Faqaccordion() {
   return (
-    <div className="container pt-5">
+    <div id="id_faq" className="container pt-5">
       <Typography
         variant="h3"
         sx={{
@@ -18,7 +18,7 @@ export default function Faqaccordion() {
       >
         FAQ
       </Typography>
-      <div className="container px-5 mt-5" >
+      <div className="container px-5 mt-5">
         {faq_json.map((faq, index) => {
           return (
             <Accordion sx={{ backgroundColor: "green", color: "white" }}>

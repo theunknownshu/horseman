@@ -4,7 +4,7 @@ import { introduce_json } from "../../constant/_helper";
 
 function Introduce() {
   return (
-    <div className="container pt-5">
+    <div id="id_introduce" className="container pt-5">
       <Typography
         variant="h3"
         sx={{
@@ -40,15 +40,16 @@ function Introduce() {
       <br />
       <Button
         variant="contained"
-        sx={{ borderRadius: "20px", px: 5 }}
-        style={{ backgroundColor: "black" }}
+        sx={{ borderRadius: "20px" }}
+        style={{ backgroundColor: "black", padding: "15px 30px" }}
       >
         View in Opensea
       </Button>
       <br></br>
       <br></br>
       <div>
-        <Button
+        {/* <Button
+        
           variant="contained"
           style={{ backgroundColor: "black" }}
           sx={{ borderRadius: "20px" }}
@@ -60,6 +61,37 @@ function Introduce() {
           variant="contained"
           style={{ backgroundColor: "black" }}
           sx={{ borderRadius: "20px" }}
+        >
+          <i className="fab fa-twitter"></i>
+        </Button> */}
+        <Button
+          variant="contained"
+          style={{ backgroundColor: "black" }}
+          onClick={() => (window.location.href = "https://discord.gg/Fx4HeMGx")}
+          sx={{
+            borderRadius: "50%",
+            width: "50px",
+            height: "50px",
+            padding: "30px",
+            fontSize: "30px"
+          }}
+        >
+          <i className="fab fa-discord"></i>
+        </Button>
+        {/* &nbsp;&nbsp; */}
+        <Button
+          variant="contained"
+          onClick={() =>
+            (window.location.href = "https://twitter.com/HorsemanClubNFT")
+          }
+          style={{ backgroundColor: "black" }}
+          sx={{
+            borderRadius: "50%",
+            width: "50px",
+            height: "50px",
+            padding: "30px",
+            fontSize: "30px"
+          }}
         >
           <i className="fab fa-twitter"></i>
         </Button>

@@ -39,7 +39,7 @@ function Header() {
           >
             <ul className="navbar-nav">
               <li className="nav-item active">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="#id_introduce">
                   About <span className="sr-only">(current)</span>
                 </a>
               </li>
@@ -49,17 +49,17 @@ function Header() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link " href="#">
+                <a className="nav-link " href="#id_roadmap">
                   Roadmap
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link " href="#">
+                <a className="nav-link " href="#id_faq">
                   FAQ
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link " href="#">
+                <a className="nav-link " href="#id_team">
                   Team
                 </a>
               </li>
@@ -77,6 +77,7 @@ function Header() {
           <Button
             sx={{ borderRadius: "20px" }}
             style={{ backgroundColor: "black" }}
+            onClick = {()=> window.location.href = "https://discord.gg/Fx4HeMGx"}
             variant="contained"
           >
             Join Discord
@@ -93,6 +94,7 @@ function Header() {
           <IconButton
             style={{ backgroundColor: "black", padding:"8px",color: "white" }}
             aria-label="delete"
+            onClick = {()=> window.location.href = "https://twitter.com/HorsemanClubNFT"}
             size="small"
           >
             <TwitterIcon fontSize="inherit" />

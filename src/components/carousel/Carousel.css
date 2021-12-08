@@ -1,0 +1,15 @@
+.slider-content{
+    padding: 0;
+    width: 100%;
+    /* position: relative; */
+    align-items: center;
+    margin:0;
+}
+.slick-slider{
+    width:100%;
+}
+
+.slick-track{
+    display:flex;
+    /* max-width:100%; */
+}

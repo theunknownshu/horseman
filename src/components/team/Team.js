@@ -4,7 +4,7 @@ import "./Team.css";
 // import developer from "../../assets/images/team/developer.JPG";
 function Team() {
   return (
-    <div className="container pt-5">
+    <div id = "id_team" className="container pt-5">
       <Typography
         variant="h3"
         sx={{
