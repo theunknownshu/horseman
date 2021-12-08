@@ -1,11 +1,15 @@
 import { roadmap_json } from "../../constant/_helper";
-import { Typography, Stack, CardMedia } from "@mui/material";
+import { Typography, Button, Stack, CardMedia } from "@mui/material";
 function Roadmap() {
   return (
-    <div className="container">
+    <div className="container pt-5">
       <Typography
         variant="h3"
-        sx={{ fontSize: ["1.5rem", "2rem", "3rem", "3rem"] }}
+        sx={{
+          fontSize: ["1.5rem", "2rem", "3rem", "3rem"],
+          fontFamily: `"Montserrat", Sans-serif`,
+          fontWeight: "800"
+        }}
       >
         HORSEMAP
       </Typography>
@@ -29,82 +33,91 @@ function Roadmap() {
           {roadmap_json[1].text}
         </Typography>
       </Stack> */}
-      {roadmap_json.map((roadmap, index) => {
-        return (
-          <div>
-            {index === 5 ? (
-              <Typography
-                sx={{
-                  fontSize: ["10px", "12px", "16px", "20px"],
-                  textAlign: ["center", "center"]
-                }}
-              >
-                {roadmap.text}
-              </Typography>
-            ) : (
-              <div>
-                {index % 2 === 0 && (
-                  <div className="row">
-                    <div className="col-sm-6 row">
-                      <div className="col-10">
-                        <Typography
-                          sx={{
-                            fontSize: ["10px", "12px", "16px", "20px"],
-                            textAlign: ["center", "right"]
-                          }}
-                        >
-                          {roadmap.text}
-                        </Typography>
+      <div className="mt-5">
+        {roadmap_json.map((roadmap, index) => {
+          return (
+            <div>
+              {index === 5 ? (
+                <Typography
+                  sx={{
+                    fontSize: ["10px", "12px", "16px", "20px"],
+                    textAlign: ["center", "center"]
+                  }}
+                >
+                  {roadmap.text}
+                </Typography>
+              ) : (
+                <div>
+                  {index % 2 === 0 && (
+                    <div className="row">
+                      <div className="col-sm-6 row">
+                        <div className="col-10">
+                          <Typography
+                            sx={{
+                              fontSize: ["10px", "12px", "16px", "20px"],
+                              textAlign: ["center", "right"]
+                            }}
+                          >
+                            {roadmap.text}
+                          </Typography>
+                        </div>
+                        <div className="col-2">
+                          {/* <img src={roadmap.flag} style={{ width: "100%" }}></img> */}
+                          <CardMedia
+                            component="img"
+                            sx={{ width: ["2rem", "3rem", "3rem", "4rem"] }}
+                            image={roadmap.flag}
+                            alt="Paella dish"
+                          />
+                        </div>
                       </div>
-                      <div className="col-2">
-                        {/* <img src={roadmap.flag} style={{ width: "100%" }}></img> */}
-                        <CardMedia
-                          component="img"
-                          sx={{ width: ["2rem", "3rem", "3rem", "4rem"] }}
-                          image={roadmap.flag}
-                          alt="Paella dish"
-                        />
-                      </div>
+                      <div className="col-sm-6"></div>
                     </div>
-                    <div className="col-sm-6"></div>
-                  </div>
-                )}
+                  )}
 
-                {index % 2 === 1 && (
-                  <div className="row">
-                    <div className="col-sm-6">
-                      <div className="col-10"></div>
-                      <div className="col-2"> </div>
-                    </div>
-                    <div className="col-sm-6 row">
-                      <div className="col-2">
-                        {/* <img src={roadmap.flag} style={{ width: "100%" }}></img> */}
-                        <CardMedia
-                          component="img"
-                          sx={{ width: ["2rem", "3rem", "3rem", "4rem"] }}
-                          image={roadmap.flag}
-                          alt="Paella dish"
-                        />
+                  {index % 2 === 1 && (
+                    <div className="row">
+                      <div className="col-sm-6">
+                        <div className="col-10"></div>
+                        <div className="col-2"> </div>
                       </div>
-                      <div className="col-10">
-                        <Typography
-                          sx={{
-                            fontSize: ["10px", "12px", "16px", "20px"],
-                            textAlign: ["center", "left"]
-                          }}
-                        >
-                          {roadmap.text}
-                        </Typography>
+                      <div className="col-sm-6 row">
+                        <div className="col-2">
+                          {/* <img src={roadmap.flag} style={{ width: "100%" }}></img> */}
+                          <CardMedia
+                            component="img"
+                            sx={{ width: ["2rem", "3rem", "3rem", "4rem"] }}
+                            image={roadmap.flag}
+                            alt="Paella dish"
+                          />
+                        </div>
+                        <div className="col-10">
+                          <Typography
+                            sx={{
+                              fontSize: ["10px", "12px", "16px", "20px"],
+                              textAlign: ["center", "left"]
+                            }}
+                          >
+                            {roadmap.text}
+                          </Typography>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                )}
-              </div>
-            )}
-            <br></br>
-          </div>
-        );
-      })}
+                  )}
+                </div>
+              )}
+              <br></br>
+            </div>
+          );
+        })}
+      </div>
+      <Button
+        variant="contained"
+        sx={{ borderRadius: "20px", px: 5 }}
+        style={{ backgroundColor: "black" }}
+      >
+        Whiteboard
+      </Button>
     </div>
   );
 }

@@ -7,6 +7,7 @@ import Faqaccordion from "./components/faq/Faq";
 import Team from "./components/team/Team";
 import Footer from "./components/footer/Footer";
 import Example from "./components/carousel/Carousel";
+import Mintsection from "./components/mintsection/Mintsection";
 function App() {
   return (
     <div className="App">
@@ -14,6 +15,7 @@ function App() {
       <Example></Example>
       <div className = "content-section">
         <Introduce></Introduce>
+        <Mintsection></Mintsection>
         <Roadmap></Roadmap>
         <Faqaccordion></Faqaccordion>
         <Team></Team>

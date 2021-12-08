@@ -1,0 +1,11 @@
+.btn-round {
+    border-radius: 20px;
+}
+.my-card-container
+{
+    max-width: 600px;
+    background-color: black;
+    text-align: center;
+    margin:auto;
+    color:white;
+}

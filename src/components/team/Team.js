@@ -1,53 +1,42 @@
-import {
-  Typography,
-  Stack,
-  CardActions,
-  CardContent,
-  Card,
-  CardMedia,
-  Button,
-  Grid
-} from "@mui/material";
+import { Typography } from "@mui/material";
 import { team_json } from "../../constant/_helper";
+import "./Team.css";
 // import developer from "../../assets/images/team/developer.JPG";
 function Team() {
   return (
-    <div className="container">
+    <div className="container pt-5">
       <Typography
         variant="h3"
-        sx={{ fontSize: ["1.5rem", "2rem", "3rem", "3rem"] }}
+        sx={{
+          fontSize: ["1.5rem", "2rem", "3rem", "3rem"],
+          fontFamily: `"Montserrat", Sans-serif`,
+          fontWeight: "800"
+        }}
       >
         TEAM
       </Typography>
-      <Grid container spacing={2}>
+      <div className=" container mt-5 row" style = {{margin:0}}>
         {team_json.map((team, index) => {
           return (
-            <Grid item xs={4}>
-              <Card sx = {{borderRadius: "20px",padding:"10px"}}>
-                <CardMedia
-                  component="img"
-                //   height="50"
-                  image={team.avatar}
-                  alt="green iguana"
-                  sx={{ borderRadius: "10%" }}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    Oliver Bounty
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Developer
-                  </Typography>
-                </CardContent>
-                {/* <CardActions>
-                  <Button size="small">Share</Button>
-                  <Button size="small">Learn More</Button>
-                </CardActions> */}
-              </Card>
-            </Grid>
+            <div className="col-sm-4 team-padding">
+              <div className="team-card-container row">
+                <div className="col-3 p-2">
+                  <img
+                    src={team.avatar}
+                    className="rounded-circle img-avatar-size"
+                    style ={{width:"50px"}}
+                  ></img>
+                </div>
+                <div className="col-9 text-align-center p-2">
+                  <Typography sx ={{fontWeight:"800"}}>{team.name}</Typography>
+                  <Typography sx= {{fontSize:"12px"}}>{team.role}</Typography>
+
+                </div>
+              </div>
+            </div>
           );
         })}
-      </Grid>
+      </div>
     </div>
   );
 }

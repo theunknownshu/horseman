@@ -1,0 +1,18 @@
+.team-card-container{
+    border-radius:20px;
+    background-color:green;
+    border:1px solid black;
+}
+.img-avatar-size
+{
+    width:50px;
+}
+.team-padding{
+    padding:10px 30px;
+}
+@media screen and (max-width:768px){
+    .img-avatar-size{
+        width:30px;
+    }
+    
+}

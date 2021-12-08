@@ -1,17 +1,20 @@
 import "./Header.css";
 import logo from "../../assets/images/logo.png";
 
-import { Button } from '@mui/material';
-
+import { Button, IconButton } from "@mui/material";
+import TwitterIcon from "@mui/icons-material/Twitter";
 function Header() {
   return (
-    <div className = "myheader">
-      <nav className="navbar navbar-expand-md navbar-light  row" style = {{margin: "0",padding:"0"}}>
+    <div className="myheader">
+      <nav
+        className="navbar navbar-expand-md navbar-light  row"
+        style={{ margin: "0", padding: "0" }}
+      >
         <div className="col-md-3 ">
           <img
             src={logo}
             alt="logo image"
-            className = "rounded-circle logo-image"
+            className="rounded-circle logo-image"
           />
           {/* <h2 className="navbar-brand my-logo" href="#">
             The Horseman Club
@@ -71,8 +74,29 @@ function Header() {
             Join Discord
           </button>
           &nbsp; */}
-          <Button sx = {{borderRadius:"20px"}} variant="contained">Join Discord</Button>
-          <Button  variant="contained" sx = {{borderRadius:"20px"}}> <i className = 	"	fab fa-twitter"></i></Button>
+          <Button
+            sx={{ borderRadius: "20px" }}
+            style={{ backgroundColor: "black" }}
+            variant="contained"
+          >
+            Join Discord
+          </Button>
+          {/* <Button
+            variant="contained"
+            style={{ backgroundColor: "black" }}
+            sx={{ borderRadius: "20px" }}
+          >
+            {" "}
+            <i className="	fab fa-twitter"></i>
+          </Button> */}
+          &nbsp;
+          <IconButton
+            style={{ backgroundColor: "black", padding:"8px",color: "white" }}
+            aria-label="delete"
+            size="small"
+          >
+            <TwitterIcon fontSize="inherit" />
+          </IconButton>
           {/* <button
             type="button"
             class="btn btn-dark btn-twitter"
