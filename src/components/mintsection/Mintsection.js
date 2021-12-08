@@ -15,21 +15,60 @@ function Mintsection() {
         MINT
       </Typography>
       <div
-        className="btn-round my-card-container row mt-5"
+        className="btn-round my-card-container row p-5 mt-5"
         style={{ maxWidth: "600px" }}
       >
-        <div className="col-sm-6 d-flex justify-content-center" >
-          <img src = {img_mint} style = {{width:"80%", padding:"10px"}}></img>
+        <div className="col-sm-6 d-flex justify-content-center">
+          <img src={img_mint} style={{ width: "100%", padding: "10px" }}></img>
         </div>
         <div className="col-sm-6">
-          <p>Mint is not available yet.</p>
-          <p>Presale and Public Sale Dates Will Be Revealed Soon.</p>
-          <p>Don't Miss Anything & Get Whitelisted!</p>
-          <Button className = "btn-round" variant="contained " style={{ color:"black", backgroundColor: "white" }}>
+          <Typography
+            sx={{
+              fontSize: ["1rem", "1rem", "1.2rem", "1.2rem"],
+              fontFamily: `"Montserrat", Sans-serif`
+            }}
+          >
+            Mint is not available yet.
+          </Typography>
+
+          <Typography
+            sx={{
+              fontSize: ["1rem", "1rem", "1.2rem", "1.2rem"],
+              fontFamily: `"Montserrat", Sans-serif`
+            }}
+          >
+            Presale and Public Sale Dates <b> Will Be Revealed Soon.</b>
+          </Typography>
+
+          <Typography
+            sx={{
+              fontSize: ["1rem", "1rem", "1.2rem", "1.2rem"],
+              fontFamily: `"Montserrat", Sans-serif`
+            }}
+          >
+            Don't Miss Anything & Get Whitelisted!
+          </Typography>
+
+          <Button
+            className="btn-round"
+            variant="contained "
+            style={{
+              color: "black",
+              backgroundColor: "white",
+              borderRadius: "30px"
+            }}
+          >
             Join Our Discord
           </Button>
           <br />
-          <i>Verified Smart Contract</i>
+          <Typography
+            sx={{
+              fontSize: ["1rem", "1rem", "1.2rem", "1.2rem"],
+              fontFamily: `"Montserrat", Sans-serif`
+            }}
+          >
+            <i> Don't Miss Anything & Get Whitelisted!</i>
+          </Typography>
         </div>
       </div>
     </div>
