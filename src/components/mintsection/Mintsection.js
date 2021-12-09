@@ -67,7 +67,7 @@ function Mintsection() {
               fontFamily: `"Montserrat", Sans-serif`
             }}
           >
-            <i> Don't Miss Anything & Get Whitelisted!</i>
+            <i>Verified Smart Contract</i>
           </Typography>
         </div>
       </div>
