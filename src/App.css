@@ -8,5 +8,6 @@
 .content-section{
   /* background-color:green; */
   /* background-image:linear-gradient(to right, #040C04 #01D901); */
-  background: linear-gradient(#040C04, #01D901);
+  /* #000000 and #009F00 */
+  background: linear-gradient(#000000, #009F00);
 }

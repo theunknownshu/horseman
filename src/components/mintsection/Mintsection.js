@@ -18,7 +18,7 @@ function Mintsection() {
         className="btn-round my-card-container row p-5 mt-5"
         style={{ maxWidth: "600px" }}
       >
-        <div className="col-sm-6 d-flex justify-content-center">
+        <div className="col-sm-6 d-flex justify-content-center" style = {{padding:0}}>
           <img src={img_mint} style={{ width: "100%", padding: "10px" }}></img>
         </div>
         <div className="col-sm-6">

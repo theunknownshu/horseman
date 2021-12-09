@@ -15,13 +15,35 @@ function Horsemap() {
       >
         HORSEMAP
       </Typography>
-      <div className="row mt-3">
+      <div className="container">
+        <div className="row mt-3" id="id-roadmap-responsive">
+          {roadmap_json.map((roadmap, index) => {
+            return (
+              index < 5 && (
+                <div>
+                  <Typography
+                    align="center"
+                    sx={{
+                      fontSize: ["1rem", "", "", "1.2rem"],
+                      fontFamily: `"Poppins", Sans-serif`
+                    }}
+                  >
+                    {roadmap.text}
+                  </Typography>
+                  <br></br>
+                </div>
+              )
+            );
+          })}
+        </div>
+      </div>
+      <div className="row mt-3" id="id-non-roadmap-responsive">
         <div className="col-md-5">
           <div className="left-roadmap">
             <Typography
               align="right"
               sx={{
-                fontSize: ["0.3rem", "", "", "1.2rem"],
+                fontSize: ["1rem", "", "", "1.2rem"],
                 fontFamily: `"Poppins", Sans-serif`
               }}
             >
@@ -31,24 +53,39 @@ function Horsemap() {
             <Typography
               align="right"
               sx={{
-                fontSize: ["0.3rem", "", "", "1.2rem"],
+                fontSize: ["1rem", "", "", "1.2rem"],
                 fontFamily: `"Poppins", Sans-serif`
               }}
               className="left-roadmap-second-section"
             >
               {roadmap_json[2].text}
             </Typography>
+
+            <Typography
+              align="right"
+              sx={{
+                fontSize: ["1rem", "", "", "1.2rem"],
+                fontFamily: `"Poppins", Sans-serif`
+              }}
+              className="left-roadmap-third-section"
+            >
+              {roadmap_json[4].text}
+            </Typography>
           </div>
         </div>
-        <div className="col-md-2">
-          <img src={img_roadmap} style={{ width: "100%"}}></img>
+        <div className="col-md-2" id="id-roadmap-diagram">
+          <img
+            src={img_roadmap}
+            style={{ width: "100%" }}
+            className="img-roadmap-size"
+          ></img>
         </div>
         <div className="col-md-5">
           <div className="right-roadmap">
             <Typography
               align="left"
               sx={{
-                fontSize: ["0.3rem", "", "", "1.2rem"],
+                fontSize: ["1rem", "", "", "1.2rem"],
                 fontFamily: `"Poppins", Sans-serif`
               }}
             >
@@ -58,7 +95,7 @@ function Horsemap() {
             <Typography
               align="left"
               sx={{
-                fontSize: ["0.3rem", "", "", "1.2rem"],
+                fontSize: ["1rem", "", "", "1.2rem"],
                 fontFamily: `"Poppins", Sans-serif`
               }}
               className="right-roadmap-second-section"
@@ -68,19 +105,19 @@ function Horsemap() {
           </div>
         </div>
       </div>
-      <br/>
+      <br />
       <div className="row">
         <Typography
           align="center"
           sx={{
-            fontSize: ["0.3rem", "", "", "1.2rem"],
+            fontSize: ["1rem", "", "", "1.2rem"],
             fontFamily: `"Poppins", Sans-serif`
           }}
         >
-          {roadmap_json[4].text}
+          {roadmap_json[5].text}
         </Typography>
       </div>
-      <br/>
+      <br />
       <Button
         variant="contained"
         sx={{ borderRadius: "20px", px: 5 }}

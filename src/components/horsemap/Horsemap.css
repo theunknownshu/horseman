@@ -2,12 +2,34 @@
 
 }
 .right-roadmap{
-    margin-top: 40px;
+    margin-top: 40px!important;
 }
 .left-roadmap-second-section{
-    margin-top:40px;
+    margin-top:40px!important;
     /* color:black; */
 }
+.left-roadmap-third-section{
+    margin-top:50px!important;
+}
 .right-roadmap-second-section{
-    margin-top:40px;
+    margin-top:40px!important;
+}
+
+.img-roadmap-size{
+    height:300px
+}
+
+#id-roadmap-responsive{
+    display:none;
+}
+#id-non-roadmap-responsive{
+    display:flex;
+}
+@media screen and (max-width:768px){
+  #id-roadmap-responsive{
+      display:flex;
+  }
+  #id-non-roadmap-responsive{
+      display:none;
+  }
 }

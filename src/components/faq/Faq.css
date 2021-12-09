@@ -1,0 +1,7 @@
+.my-faq-background{
+    background-image: url("../../assets/images/img_faq_golf.png");
+    background-attachment: scroll;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+}
