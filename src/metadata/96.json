@@ -1,0 +1,67 @@
+{
+  "name": "Your Collection #96",
+  "description": "Remember to replace this description",
+  "image": "ipfs://NewUriToReplace/96.png",
+  "dna": "83b2ccfcac6d1440646b413cd3a1bf3db10068b7",
+  "edition": 96,
+  "date": 1638811458026,
+  "attributes": [
+    {
+      "trait_type": "Fondo",
+      "value": "8"
+    },
+    {
+      "trait_type": "Alas",
+      "value": "9"
+    },
+    {
+      "trait_type": "Espalda objeto",
+      "value": "9"
+    },
+    {
+      "trait_type": "Cuerpo",
+      "value": "5"
+    },
+    {
+      "trait_type": "Cabellera",
+      "value": "6"
+    },
+    {
+      "trait_type": "Ropa",
+      "value": "11"
+    },
+    {
+      "trait_type": "Earings",
+      "value": "9"
+    },
+    {
+      "trait_type": "Sombrero",
+      "value": "12"
+    },
+    {
+      "trait_type": "Accesorios varios",
+      "value": "9"
+    },
+    {
+      "trait_type": "Collares",
+      "value": "9"
+    },
+    {
+      "trait_type": "Boca",
+      "value": "9"
+    },
+    {
+      "trait_type": "Ojos",
+      "value": "13"
+    },
+    {
+      "trait_type": "Gafas",
+      "value": "9"
+    },
+    {
+      "trait_type": "Espalda objeto",
+      "value": "9"
+    }
+  ],
+  "compiler": "HashLips Art Engine"
+}

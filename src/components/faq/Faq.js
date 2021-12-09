@@ -24,7 +24,7 @@ export default function Faqaccordion() {
         <div
           style={{
             position: "absolute",
-            right: "-200px",
+            right: "0",
             top: "20px"
           }}
         >
