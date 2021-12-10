@@ -1,4 +1,4 @@
-import "./Introduce.css";
+import "./introduce.css";
 import { Typography, Button } from "@mui/material";
 import { introduce_json } from "../../constant/_helper";
 
