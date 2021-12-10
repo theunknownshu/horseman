@@ -42,7 +42,7 @@ function Customcarousel() {
 
   return (
     <div className="">
-      <img className="img-fluid" src={img_intro} />
+      <img className="img-fluid" src={img_intro} style = {{width:"100%"}} />
       <div className=" text-center text-dark" style ={{overflow:"hidden"}}>
         <div className="row slider-content" style = {{flexDirection:"column"}}>
           <Slider {...settings}>
