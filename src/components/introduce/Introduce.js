@@ -40,7 +40,7 @@ function Introduce() {
       <br />
       <Button
         variant="contained"
-        sx={{ borderRadius: "20px" }}
+        sx={{ borderRadius: "40px" }}
         style={{ backgroundColor: "black", padding: "15px 30px" }}
       >
         Enter in the whitelist
