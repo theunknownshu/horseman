@@ -43,7 +43,7 @@ function Introduce() {
         sx={{ borderRadius: "20px" }}
         style={{ backgroundColor: "black", padding: "15px 30px" }}
       >
-        View in Opensea
+        Enter in the whitelist
       </Button>
       <br></br>
       <br></br>
