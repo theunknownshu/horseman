@@ -57,8 +57,7 @@ export const faq_json = [
   },
   {
     question: "When will my Horseman be revealed?",
-    answer:
-      "All Horsemen will be revealed 48 hours after the mint."
+    answer: "All Horsemen will be revealed 48 hours after the mint."
   },
   {
     question: "What can I do with my Horseman?",
@@ -82,24 +81,24 @@ export const introduce_json = {
 };
 export const team_json = [
   {
+    role: "CEO",
+    name: "Arthur",
+    avatar: "./assets/images/team/img_team_arthur.jpg"
+  },
+  {
     role: "Designer",
     name: "Thierry",
-    avatar: "./assets/images/carousel/375.png"
+    avatar: "./assets/images/team/img_team_thierry.jpg"
   },
   {
     role: "Developer",
     name: "Martin",
-    avatar: "./assets/images/carousel/378.png"
-  },
-  {
-    role: "CEO",
-    name: "Arthur",
-    avatar: "./assets/images/carousel/379.png"
+    avatar: "./assets/images/team/img_team_martin.jpg"
   },
   {
     role: "developer",
     name: "Oliver",
-    avatar: "./assets/images/carousel/380.png"
+    avatar: "./assets/images/team/img_team_oliver.jpg"
   }
 ];
 export const carousel_baseURL = "./assets/images/carousel/";
@@ -114,6 +113,9 @@ export const carousel_imagename = [
   "395.png",
   "398.png",
   "403.png",
-  "404.png"
+  "404.png",
+  "412.png",
+  "413.png",
+  "419.png"
 ];
 // export const nftlist_img_base = "";
