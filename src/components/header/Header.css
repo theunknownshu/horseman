@@ -33,6 +33,17 @@
 ul li {
     margin:3px;
 }
+ul li a{
+    color: black!important;
+}
+ul li button {
+    font-weight: 800 !important;
+    background-color: transparent;
+}
+ul li button:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0 rgb(0 123 255 / 25%) !important;
+}
 .logo-image{
     width:40px;
     background-color:black;

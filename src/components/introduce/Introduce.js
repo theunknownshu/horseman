@@ -18,6 +18,7 @@ function Introduce() {
       <br />
       <Typography
         sx={{ fontSize: ["10px", "12px", "16px", "20px"] }}
+        className = "mt-5"
         // dangerouslySetInnerHTML={{ __html: '<p>introduce_json.<br>content</p>' }}
       >
         {introduce_json.content1}
@@ -40,14 +41,18 @@ function Introduce() {
       <br />
       <Button
         variant="contained"
+        className = "mt-5"
         sx={{ borderRadius: "40px" }}
         style={{ backgroundColor: "black", padding: "15px 30px" }}
       >
-        Enter in the whitelist
+        <Typography
+          sx={{ fontFamily: `"Montserrat", Sans-serif`, fontWeight: "bold" }}
+        >
+          Enter in the whitelist
+        </Typography>
       </Button>
-      <br></br>
-      <br></br>
-      <div>
+     
+      <div className = "mt-5">
         {/* <Button
         
           variant="contained"
@@ -77,7 +82,11 @@ function Introduce() {
           }}
         >
           {/* <i className="fab fa-discord"></i> */}
-          	<img src="https://assets.website-files.com/61211faffaafcac4231a603c/61211faffaafca5d3a1a608b_Discord%20-%20Negative.svg" loading="lazy" alt=""/>
+          <img
+            src="https://assets.website-files.com/61211faffaafcac4231a603c/61211faffaafca5d3a1a608b_Discord%20-%20Negative.svg"
+            loading="lazy"
+            alt=""
+          />
         </Button>
         &nbsp;&nbsp;
         <Button
@@ -95,7 +104,11 @@ function Introduce() {
           }}
         >
           {/* <i className="fab fa-twitter"></i> */}
-          <img src="https://assets.website-files.com/61211faffaafcac4231a603c/61211faffaafcac62e1a608d_Twitter%20-%20Negative.svg" loading="lazy" alt=""/>
+          <img
+            src="https://assets.website-files.com/61211faffaafcac4231a603c/61211faffaafcac62e1a608d_Twitter%20-%20Negative.svg"
+            loading="lazy"
+            alt=""
+          />
         </Button>
       </div>
     </div>

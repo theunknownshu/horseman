@@ -12,15 +12,19 @@ function Footer() {
         spacing={2}
       >
         <Stack direction="column">
-          <Typography sx={{ color: "black" }}>
+          <Typography sx={{ fontSize: ["0.7rem", "0.9rem", "1rem", "1.2rem"] }}>
             @2021 THE HORSEMAN CLUB
+            <br></br>
+            Allright Reserved
           </Typography>
-          <Typography sx={{ marginLeft: "4px" }}>Terms of Service</Typography>
         </Stack>
         <Stack direction="row">
           <Button
             variant="contained"
             style={{ backgroundColor: "black" }}
+            onClick={() =>
+              (window.location.href = "https://discord.gg/Fx4HeMGx")
+            }
             sx={{
               borderRadius: "50%",
               width: "50px",
@@ -38,6 +42,9 @@ function Footer() {
           &nbsp;&nbsp;
           <Button
             variant="contained"
+            onClick={() =>
+              (window.location.href = "https://twitter.com/HorsemanClubNFT")
+            }
             style={{ backgroundColor: "black" }}
             sx={{
               borderRadius: "50%",
@@ -53,8 +60,8 @@ function Footer() {
               alt=""
             />
           </Button>
-          &nbsp;&nbsp;
-          <Button
+          {/* &nbsp;&nbsp; */}
+          {/* <Button
             variant="contained"
             style={{ backgroundColor: "black" }}
             sx={{
@@ -66,7 +73,10 @@ function Footer() {
             }}
           >
             <i className="fab fa-medium"></i>
-          </Button>
+          </Button> */}
+        </Stack>
+        <Stack>
+          <a>Terms of Service</a>
         </Stack>
       </Stack>
     </div>

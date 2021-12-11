@@ -15,7 +15,7 @@ function Horsemap() {
       >
         HORSEMAP
       </Typography>
-      <div className="container">
+      <div className="container mt-5">
         <div className="row mt-3" id="id-roadmap-responsive">
           {roadmap_json.map((roadmap, index) => {
             return (
@@ -117,13 +117,17 @@ function Horsemap() {
           {roadmap_json[5].text}
         </Typography>
       </div>
-      <br />
       <Button
         variant="contained"
+        className = "mt-5"
         sx={{ borderRadius: "20px", px: 5 }}
         style={{ backgroundColor: "black" }}
       >
-        Whiteboard
+        <Typography
+          sx={{ fontFamily: `"Montserrat", Sans-serif`, fontWeight: "bold" }}
+        >
+          Whiteboard
+        </Typography>
       </Button>
     </div>
   );

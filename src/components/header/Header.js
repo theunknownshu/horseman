@@ -37,16 +37,45 @@ function Header() {
             className="collapse navbar-collapse justify-content-center"
             id="navbarTogglerDemo01"
           >
-            <ul className="navbar-nav">
-              <li className="nav-item active">
+            <ul
+              className="navbar-nav"
+              style={{
+                width: "100%",
+                justifyContent: "space-between",
+                fontFamily: `"Montserrat", Sans-serif`,
+                fontWeight: "800",
+                color: "black"
+              }}
+            >
+              <li className="nav-item ">
                 <a className="nav-link" href="#id_introduce">
-                  About <span className="sr-only">(current)</span>
+                  About
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link dropdown-toggle" href="#">
-                  Project
-                </a>
+                <div class="dropdown">
+                  <button
+                    class="btn  dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Project
+                  </button>
+                  <div
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton"
+                  >
+                    <a class="dropdown-item" href="#">
+                      Whitelist
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      Whiteboard
+                    </a>
+                  </div>
+                </div>
               </li>
               <li className="nav-item">
                 <a className="nav-link " href="#id_roadmap">
@@ -77,7 +106,9 @@ function Header() {
           <Button
             sx={{ borderRadius: "20px" }}
             style={{ backgroundColor: "black" }}
-            onClick = {()=> window.location.href = "https://discord.gg/Fx4HeMGx"}
+            onClick={() =>
+              (window.location.href = "https://discord.gg/Fx4HeMGx")
+            }
             variant="contained"
           >
             Join Discord
@@ -92,9 +123,11 @@ function Header() {
           </Button> */}
           &nbsp;
           <IconButton
-            style={{ backgroundColor: "black", padding:"8px",color: "white" }}
+            style={{ backgroundColor: "black", padding: "8px", color: "white" }}
             aria-label="delete"
-            onClick = {()=> window.location.href = "https://twitter.com/HorsemanClubNFT"}
+            onClick={() =>
+              (window.location.href = "https://twitter.com/HorsemanClubNFT")
+            }
             size="small"
           >
             <TwitterIcon fontSize="inherit" />

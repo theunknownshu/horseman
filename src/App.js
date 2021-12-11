@@ -9,12 +9,14 @@ import Footer from "./components/footer/Footer";
 import Customcarousel from "./components/carousel/Carousel";
 import Mintsection from "./components/mintsection/Mintsection";
 import Horsemap from "./components/horsemap/Horsemap";
+
+// import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 function App() {
   return (
     <div className="App">
       <Header></Header>
       <Customcarousel></Customcarousel>
-      <div className = "content-section">
+      <div className="content-section">
         <Introduce></Introduce>
         <Mintsection></Mintsection>
         <Horsemap></Horsemap>
@@ -22,7 +24,6 @@ function App() {
         <Faqaccordion></Faqaccordion>
         <Team></Team>
         <Footer></Footer>
-
       </div>
       {/* <Nftlist></Nftlist> */}
       {/* <Stack spacing={2} direction="row">
