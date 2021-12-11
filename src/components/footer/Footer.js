@@ -5,7 +5,7 @@ function Footer() {
   return (
     <div className="container mt-5">
       <Stack
-        direction={{ xs: 'column', sm: 'row' }}
+        direction={{ xs: "column", sm: "row" }}
         justifyContent="space-between"
         alignItems="Center"
         textAlign="left"
@@ -29,7 +29,11 @@ function Footer() {
               fontSize: "30px"
             }}
           >
-            <i className="fab fa-discord"></i>
+            <img
+              src="https://assets.website-files.com/61211faffaafcac4231a603c/61211faffaafca5d3a1a608b_Discord%20-%20Negative.svg"
+              loading="lazy"
+              alt=""
+            />
           </Button>
           &nbsp;&nbsp;
           <Button
@@ -43,7 +47,11 @@ function Footer() {
               fontSize: "30px"
             }}
           >
-            <i className="fab fa-twitter"></i>
+            <img
+              src="https://assets.website-files.com/61211faffaafcac4231a603c/61211faffaafcac62e1a608d_Twitter%20-%20Negative.svg"
+              loading="lazy"
+              alt=""
+            />
           </Button>
           &nbsp;&nbsp;
           <Button
@@ -59,39 +67,6 @@ function Footer() {
           >
             <i className="fab fa-medium"></i>
           </Button>
-          {/* <button
-            className="btn btn-dark"
-            style={{
-              borderRadius: "50%",
-              padding: "4px 10px",
-              fontSize: "25px",
-              backgroundColor: "#000"
-            }}
-          >
-            <i className="fab fa-discord"></i>
-          </button>
-          <button
-            className="btn btn-dark"
-            style={{
-              borderRadius: "50%",
-              padding: "4px 8px",
-              fontSize: "25px",
-              backgroundColor: "#000"
-            }}
-          >
-            <i className="fab fa-twitter"></i>
-          </button>
-          <button
-            className="btn btn-dark"
-            style={{
-              borderRadius: "50%",
-              padding: "4px 12px",
-              fontSize: "25px",
-              backgroundColor: "#000"
-            }}
-          >
-            <i className="fab fa-medium"></i>
-          </button> */}
         </Stack>
       </Stack>
     </div>

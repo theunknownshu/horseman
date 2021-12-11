@@ -76,9 +76,10 @@ function Introduce() {
             fontSize: "30px"
           }}
         >
-          <i className="fab fa-discord"></i>
+          {/* <i className="fab fa-discord"></i> */}
+          	<img src="https://assets.website-files.com/61211faffaafcac4231a603c/61211faffaafca5d3a1a608b_Discord%20-%20Negative.svg" loading="lazy" alt=""/>
         </Button>
-        {/* &nbsp;&nbsp; */}
+        &nbsp;&nbsp;
         <Button
           variant="contained"
           onClick={() =>
@@ -93,7 +94,8 @@ function Introduce() {
             fontSize: "30px"
           }}
         >
-          <i className="fab fa-twitter"></i>
+          {/* <i className="fab fa-twitter"></i> */}
+          <img src="https://assets.website-files.com/61211faffaafcac4231a603c/61211faffaafcac62e1a608d_Twitter%20-%20Negative.svg" loading="lazy" alt=""/>
         </Button>
       </div>
     </div>

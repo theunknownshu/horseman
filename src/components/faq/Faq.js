@@ -30,7 +30,7 @@ export default function Faqaccordion() {
         >
           <img src={img_faq_golf} style={{ height: "400px" }}></img>
         </div>
-        <div className="row" style = {{zIndex:1000}}>
+        <div className="row" style={{ zIndex: 1000, paddingRight: "100px" }}>
           {faq_json.map((faq, index) => {
             return (
               <Accordion
@@ -45,10 +45,17 @@ export default function Faqaccordion() {
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
-                  <Typography>{faq.question}</Typography>
+                  <Typography sx={{fontWeight:"600", fontSize: ["0.75rem", "1rem", "1.2rem"] }}>
+                    {faq.question}
+                  </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <Typography align="left">{faq.answer}</Typography>
+                  <Typography
+                    sx={{ fontSize: ["0.55rem", "0.8rem", "0.9rem"] }}
+                    align="left"
+                  >
+                    {faq.answer}
+                  </Typography>
                 </AccordionDetails>
               </Accordion>
             );
