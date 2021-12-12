@@ -122,7 +122,7 @@ function Horsemap() {
       <Button
         variant="contained"
         className="mt-5"
-        onClick={() => navigate("/whiteboard")}
+        
         sx={{ borderRadius: "20px", px: 5 }}
         style={{ backgroundColor: "black" }}
       >

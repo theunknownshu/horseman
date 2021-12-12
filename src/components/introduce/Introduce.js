@@ -1,8 +1,11 @@
 import "./introduce.css";
 import { Typography, Button } from "@mui/material";
 import { introduce_json } from "../../constant/_helper";
+import { useNavigate } from "react-router-dom";
 
 function Introduce() {
+  const navigate = useNavigate();
+
   return (
     <div id="id_introduce" className="container pt-5">
       <Typography
@@ -42,6 +45,7 @@ function Introduce() {
       <Button
         variant="contained"
         className = "mt-5"
+        onClick={() => navigate("/whiteboard")}
         sx={{ borderRadius: "40px" }}
         style={{ backgroundColor: "black", padding: "15px 30px" }}
       >

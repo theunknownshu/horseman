@@ -1,6 +1,7 @@
 import * as React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import { useNavigate } from "react-router-dom";
 
 import {
   Typography,
@@ -11,9 +12,13 @@ import {
 } from "@mui/material";
 import { alpha, styled } from "@mui/material/styles";
 export default function WhiteBoard() {
+  const navigate = useNavigate();
+
   const [state_discord, setDiscord] = useState("");
   const [verify_discord, setDiscordVerification] = useState(false);
-  const [verify_recaptcha, setRecaptcha] = useState("");
+  const [verify_recaptcha, setRecaptcha] = useState(null);
+  const [errors, setErrors] = useState();
+  const [sub_but, setSubbut] = useState(false);
   // const [verify_discord,setDiscordVerification] = useState(false);
   const styles = {
     whiteboard_button: {
@@ -22,12 +27,20 @@ export default function WhiteBoard() {
     }
   };
 
+  useEffect(() => {
+    if (verify_recaptcha !== null) {
+      console.log("subasldfkj;alsdf", sub_but);
+      setSubbut(true);
+    } else setSubbut(false);
+    console.log("effect->verify_recaptcha==", verify_recaptcha);
+  }, [verify_recaptcha]);
+
   function handleSubmit(e) {
     e.preventDefault();
-    
+    console.log("whiteboard -> ", verify_recaptcha);
   }
   return (
-    <>
+    <div className="mt-5 container">
       <Typography
         variant="h3"
         sx={{
@@ -39,7 +52,7 @@ export default function WhiteBoard() {
         How to Join Whitelist
       </Typography>
 
-      <div className="step1 row">
+      <div className="step1 row mt-5">
         <div className="col-md-3">
           <Typography
             sx={{
@@ -101,7 +114,7 @@ export default function WhiteBoard() {
             account options (on PC) or use the profile button (on mobile). Your
             ID must include the # and numbers included.
           </Typography>
-          <div className="row">
+          <div className="row mt-2">
             <div className="col-sm-6">
               <Typography
                 sx={{
@@ -213,20 +226,62 @@ export default function WhiteBoard() {
           <div className="d-flex text-align-center justify-content-center mt-3">
             <ReCAPTCHA
               sitekey="6LcXm5kdAAAAAEh3rCfkiVBQBhUl87gp-htgLJ9t"
-              ref={(r) => setRecaptcha(r)}
+              // ref={(r) => setRecaptcha(r)}
+              onChange={(token) => {
+                setRecaptcha(token);
+                let copyErrors = { ...errors };
+                if (token) {
+                  copyErrors.captcha = undefined;
+                } else {
+                  copyErrors.captcha = "";
+                }
+                setErrors(copyErrors);
+              }}
+              onErrored={(e) => {
+                let copyErrors = { ...errors };
+                copyErrors.captcha = "";
+                setErrors(copyErrors);
+              }}
             />
           </div>
         </div>
       </div>
-            <hr></hr>
-      <Button
-        style={styles.whiteboard_button}
-        sx = {{width:"300px"}}
-        onClick={handleSubmit}
-        variant="contained"
-      >
-        Submit
-      </Button>
-    </>
+      <hr></hr>
+      <div className="d-flex justify-content-center" style={{ position: "relative" }}>
+        {sub_but === true ? (
+          <Button
+            style={styles.whiteboard_button}
+            sx={{ width: "300px" }}
+            onClick={handleSubmit}
+            variant="contained"
+            // disabled
+          >
+            Submit
+          </Button>
+        ) : (
+          <Button
+            // style={styles.whiteboard_button}
+            sx={{ width: "50%" }}
+            onClick={handleSubmit}
+            variant="contained"
+            disabled
+          >
+            Submit
+          </Button>
+        )}
+
+        <Button
+          style={styles.whiteboard_button}
+          sx={{ position:"absolute", right:"10px" }}
+          onClick={handleSubmit}
+          variant="contained"
+          onClick={() => navigate("/")}
+
+          // disabled
+        >
+          back
+        </Button>
+      </div>
+    </div>
   );
 }

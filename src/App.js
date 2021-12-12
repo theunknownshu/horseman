@@ -9,14 +9,14 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header></Header>
-        <Customcarousel></Customcarousel>
-        <div className="content-section">
+        {/* <Header></Header> */}
+        {/* <Customcarousel></Customcarousel> */}
+        <div className="">
           <Routes>
             <Route path="/" element={<HomeContainer />}></Route>
             <Route path="/whiteboard" element={<WhiteboardContainer />}></Route>
           </Routes>
-          <Footer></Footer>
+       
         </div>
       </div>
     </Router>
