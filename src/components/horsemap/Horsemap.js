@@ -43,7 +43,7 @@ function Horsemap() {
             <Typography
               align="right"
               sx={{
-                fontSize: ["1rem", "", "", "1.2rem"],
+                fontSize: ["1rem", "", "1.1rem", "1.2rem"],
                 fontFamily: `"Poppins", Sans-serif`
               }}
             >
@@ -53,7 +53,7 @@ function Horsemap() {
             <Typography
               align="right"
               sx={{
-                fontSize: ["1rem", "", "", "1.2rem"],
+                fontSize: ["1rem", "", "1.1rem", "1.2rem"],
                 fontFamily: `"Poppins", Sans-serif`
               }}
               className="left-roadmap-second-section"
@@ -64,7 +64,7 @@ function Horsemap() {
             <Typography
               align="right"
               sx={{
-                fontSize: ["1rem", "", "", "1.2rem"],
+                fontSize: ["1rem", "", "1.1rem", "1.2rem"],
                 fontFamily: `"Poppins", Sans-serif`
               }}
               className="left-roadmap-third-section"
@@ -85,7 +85,7 @@ function Horsemap() {
             <Typography
               align="left"
               sx={{
-                fontSize: ["1rem", "", "", "1.2rem"],
+                fontSize: ["1rem", "", "1.1rem", "1.2rem"],
                 fontFamily: `"Poppins", Sans-serif`
               }}
             >
@@ -95,7 +95,7 @@ function Horsemap() {
             <Typography
               align="left"
               sx={{
-                fontSize: ["1rem", "", "", "1.2rem"],
+                fontSize: ["1rem", "", "1.1rem", "1.2rem"],
                 fontFamily: `"Poppins", Sans-serif`
               }}
               className="right-roadmap-second-section"
@@ -110,7 +110,7 @@ function Horsemap() {
         <Typography
           align="center"
           sx={{
-            fontSize: ["1rem", "", "", "1.2rem"],
+            fontSize: ["1rem", "", "1.1rem", "1.2rem"],
             fontFamily: `"Poppins", Sans-serif`
           }}
         >
