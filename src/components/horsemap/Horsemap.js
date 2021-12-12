@@ -2,7 +2,9 @@ import { roadmap_json } from "../../constant/_helper";
 import { Typography, Button, Stack, CardMedia } from "@mui/material";
 import img_roadmap from "../../assets/images/roadmap_diagram.png";
 import "./Horsemap.css";
+import { useNavigate } from "react-router-dom";
 function Horsemap() {
+  const navigate = useNavigate();
   return (
     <div id="id_roadmap" className="container pt-5">
       <Typography
@@ -119,7 +121,8 @@ function Horsemap() {
       </div>
       <Button
         variant="contained"
-        className = "mt-5"
+        className="mt-5"
+        onClick={() => navigate("/whiteboard")}
         sx={{ borderRadius: "20px", px: 5 }}
         style={{ backgroundColor: "black" }}
       >
