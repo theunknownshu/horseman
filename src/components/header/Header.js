@@ -41,7 +41,7 @@ function Header() {
               className="navbar-nav"
               style={{
                 width: "100%",
-                justifyContent: "space-between",
+                justifyContent: "space-around",
                 fontFamily: `"Montserrat", Sans-serif`,
                 fontWeight: "800",
                 color: "black"
