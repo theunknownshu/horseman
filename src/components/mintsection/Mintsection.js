@@ -18,14 +18,18 @@ function Mintsection() {
         className="btn-round my-card-container row p-5 mt-5"
         style={{ maxWidth: "650px" }}
       >
-        <div className="col-sm-6 d-flex justify-content-center" style = {{padding:0}}>
+        <div
+          className="col-sm-6 d-flex justify-content-center"
+          style={{ padding: 0 }}
+        >
           <img src={img_mint} style={{ width: "100%", padding: "10px" }}></img>
         </div>
         <div className="col-sm-6">
           <Typography
             sx={{
               fontSize: ["1rem", "1rem", "1.2rem", "1.2rem"],
-              fontFamily: `"Montserrat", Sans-serif`
+              fontFamily: `"Montserrat", Sans-serif`,
+              fontWeight: "bold"
             }}
           >
             Mint is not available yet.
@@ -50,15 +54,24 @@ function Mintsection() {
           </Typography>
 
           <Button
-            className="btn-round"
+            className="btn-round py-2"
             variant="contained "
             style={{
               color: "black",
               backgroundColor: "white",
               borderRadius: "30px"
+              
+
             }}
           >
-            Join Our Discord
+            <Typography
+              sx={{
+                fontFamily: `"Montserrat", Sans-serif`,
+                fontWeight: "bold"
+              }}
+            >
+              Join Our Discord
+            </Typography>
           </Button>
           <br />
           <Typography

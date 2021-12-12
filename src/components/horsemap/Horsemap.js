@@ -132,7 +132,7 @@ function Horsemap() {
           Whiteboard
         </Typography>
       </Button>
-    </div>
+    </div>  
   );
 }
 
