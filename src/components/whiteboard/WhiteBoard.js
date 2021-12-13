@@ -5,9 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import { Typography, Button, TextField } from "@mui/material";
 import { alpha, styled } from "@mui/material/styles";
-import {
-  connectWallet,
-} from "../../util/interact.js";
+import { connectWallet } from "../../util/interact.js";
 
 export default function WhiteBoard(props) {
   const navigate = useNavigate();
@@ -30,10 +28,8 @@ export default function WhiteBoard(props) {
   }, []);
   useEffect(() => {
     if (verify_recaptcha !== null) {
-      console.log("subasldfkj;alsdf", sub_but);
       setSubbut(true);
     } else setSubbut(false);
-    console.log("effect->verify_recaptcha==", verify_recaptcha);
   }, [verify_recaptcha]);
 
   function handleSubmit(e) {
