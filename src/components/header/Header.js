@@ -3,7 +3,11 @@ import logo from "../../assets/images/logo.png";
 
 import { Button, IconButton } from "@mui/material";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import { useNavigate,Link} from "react-router-dom";
+
 function Header() {
+  const navigate = useNavigate();
+
   return (
     <div className="myheader">
       <nav
@@ -53,9 +57,9 @@ function Header() {
                 </a>
               </li>
               <li className="nav-item">
-                <div class="dropdown">
+                <div className="dropdown">
                   <button
-                    class="btn  dropdown-toggle"
+                    className="btn  dropdown-toggle"
                     type="button"
                     id="dropdownMenuButton"
                     data-toggle="dropdown"
@@ -65,15 +69,17 @@ function Header() {
                     Project
                   </button>
                   <div
-                    class="dropdown-menu"
+                    className="dropdown-menu"
                     aria-labelledby="dropdownMenuButton"
                   >
-                    <a class="dropdown-item" href="#">
+                    {/* <a className="dropdown-item" href="#">
                       Whitelist
-                    </a>
-                    <a class="dropdown-item" href="#">
+                    </a> */}
+                    <Link className = "dropdown-item" to = "/whitelist">WhiteList</Link>
+                    {/* <Link className = "dropdown-item" to = "/whiteboard">WhiteBoard</Link> */}
+                    {/* <a className="dropdown-item" href="#">
                       Whiteboard
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </li>

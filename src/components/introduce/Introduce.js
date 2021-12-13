@@ -45,7 +45,7 @@ function Introduce() {
       <Button
         variant="contained"
         className = "mt-5"
-        onClick={() => navigate("/whiteboard")}
+        onClick={() => navigate("/whitelist")}
         sx={{ borderRadius: "40px" }}
         style={{ backgroundColor: "black", padding: "15px 30px" }}
       >

@@ -3,17 +3,15 @@ import { useState, useEffect } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useNavigate } from "react-router-dom";
 
-import {
-  Typography,
-  Button,
-  Stack,
-  TextField,
-  withStyles
-} from "@mui/material";
+import { Typography, Button, TextField } from "@mui/material";
 import { alpha, styled } from "@mui/material/styles";
-export default function WhiteBoard() {
-  const navigate = useNavigate();
+import {
+  connectWallet,
+} from "../../util/interact.js";
 
+export default function WhiteBoard(props) {
+  const navigate = useNavigate();
+  const [walletAddress, setWalletAddress] = useState("");
   const [state_discord, setDiscord] = useState("");
   const [verify_discord, setDiscordVerification] = useState(false);
   const [verify_recaptcha, setRecaptcha] = useState(null);
@@ -28,6 +26,9 @@ export default function WhiteBoard() {
   };
 
   useEffect(() => {
+    setWalletAddress(props.walletAddress);
+  }, []);
+  useEffect(() => {
     if (verify_recaptcha !== null) {
       console.log("subasldfkj;alsdf", sub_but);
       setSubbut(true);
@@ -37,8 +38,16 @@ export default function WhiteBoard() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log("whiteboard -> ", verify_recaptcha);
   }
+
+  /**
+   *  Press connect button so that can connect to metamask */
+  async function handleConnect(e) {
+    e.preventDefault();
+    const walletResponse = await connectWallet();
+    setWalletAddress(walletResponse.address);
+  }
+
   return (
     <div className="mt-5 container">
       <Typography
@@ -78,12 +87,28 @@ export default function WhiteBoard() {
               </Typography>
             </div>
             <div className="col-sm-3">
-              <Button
-                variant="contained"
-                sx={{ backgroundColor: "transparent" }}
-              >
-                Connect
-              </Button>
+              {walletAddress !== "" ? (
+                <Button
+                  variant="contained"
+                  sx={{ backgroundColor: "transparent" }}
+                >
+                  {walletAddress.length > 0 ? (
+                    String(walletAddress).substring(0, 6) +
+                    "..." +
+                    String(walletAddress).substring(38)
+                  ) : (
+                    <span>Connect</span>
+                  )}
+                </Button>
+              ) : (
+                <Button
+                  variant="contained"
+                  sx={{ backgroundColor: "transparent" }}
+                  onClick={handleConnect}
+                >
+                  Connect
+                </Button>
+              )}
             </div>
           </div>
         </div>
@@ -166,7 +191,7 @@ export default function WhiteBoard() {
 
       <hr></hr>
 
-      <div className="step3 row">
+      {/* <div className="step3 row">
         <div className="col-md-3">
           <Typography
             sx={{
@@ -199,9 +224,9 @@ export default function WhiteBoard() {
             />
           </div>
         </div>
-      </div>
-      <hr></hr>
-      <div className="step4 row">
+      </div> */}
+      {/* <hr></hr> */}
+      <div className="step3 row">
         <div className="col-md-3">
           <Typography
             sx={{
@@ -210,7 +235,7 @@ export default function WhiteBoard() {
               fontWeight: "800"
             }}
           >
-            step4
+            step3
           </Typography>
         </div>
         <div className="col-md-9">
@@ -247,7 +272,10 @@ export default function WhiteBoard() {
         </div>
       </div>
       <hr></hr>
-      <div className="d-flex justify-content-center" style={{ position: "relative" }}>
+      <div
+        className="d-flex justify-content-center"
+        style={{ position: "relative" }}
+      >
         {sub_but === true ? (
           <Button
             style={styles.whiteboard_button}
@@ -272,7 +300,7 @@ export default function WhiteBoard() {
 
         <Button
           style={styles.whiteboard_button}
-          sx={{ position:"absolute", right:"10px" }}
+          sx={{ position: "absolute", right: "10px" }}
           onClick={handleSubmit}
           variant="contained"
           onClick={() => navigate("/")}

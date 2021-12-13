@@ -1,8 +1,12 @@
 import { roadmap_json } from "../../constant/_helper";
 import { Typography, Button, Stack, CardMedia } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+
 function Roadmap() {
+  const navigate = useNavigate();
+
   return (
-    <div id= "id_roadmap" className="container pt-5">
+    <div id="id_roadmap" className="container pt-5">
       <Typography
         variant="h3"
         sx={{
@@ -115,9 +119,21 @@ function Roadmap() {
         variant="contained"
         sx={{ borderRadius: "20px", px: 5 }}
         style={{ backgroundColor: "black" }}
+        onClick={() =>
+          window.location.href =
+            "/https://the-horseman-club.gitbook.io/whiteboard/"
+        }
       >
+        
         Whiteboard
       </Button>
+      {/* <a
+        style={{ backgroundColor: "black", borderRadius: "20px", px: 5 }}
+        href="/https://the-horseman-club.gitbook.io/whiteboard/"
+        target = "_blank"
+      >
+        Whiteboard
+      </a> */}
     </div>
   );
 }

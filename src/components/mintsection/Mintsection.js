@@ -1,6 +1,6 @@
 import "./Mintsection.css";
 import { Typography, Button } from "@mui/material";
-import img_mint from "../../assets/images/carousel/375.png";
+import img_mint from "../../assets/images/img_mintsection.png";
 function Mintsection() {
   return (
     <div className="container pt-5">
@@ -73,14 +73,16 @@ function Mintsection() {
               Join Our Discord
             </Typography>
           </Button>
-          <br />
+          
+
           <Typography
             sx={{
-              fontSize: ["1rem", "1rem", "1.2rem", "1.2rem"],
+              fontSize: ["0.8rem", "0.8rem", "1rem", "1rem"],
               fontFamily: `"Montserrat", Sans-serif`
             }}
+            className = "mt-2"
           >
-            <i>Verified Smart Contract</i>
+            <i style = {{color:"gray"}}>Verified Smart Contract</i>
           </Typography>
         </div>
       </div>
