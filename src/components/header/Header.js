@@ -3,7 +3,7 @@ import logo from "../../assets/images/logo.png";
 
 import { Button, IconButton } from "@mui/material";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import { useNavigate,Link} from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function Header() {
   const navigate = useNavigate();
@@ -75,11 +75,16 @@ function Header() {
                     {/* <a className="dropdown-item" href="#">
                       Whitelist
                     </a> */}
-                    <Link className = "dropdown-item" to = "/whitelist">WhiteList</Link>
-                    {/* <Link className = "dropdown-item" to = "/whiteboard">WhiteBoard</Link> */}
-                    {/* <a className="dropdown-item" href="#">
+                    <Link className="dropdown-item" to="/whitelist">
+                      WhiteList
+                    </Link>
+                    <a
+                      className="dropdown-item"
+                      href="https://the-horseman-club.gitbook.io/whiteboard/"
+                      target="_blank"
+                    >
                       Whiteboard
-                    </a> */}
+                    </a>
                   </div>
                 </div>
               </li>
