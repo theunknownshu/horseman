@@ -1,6 +1,7 @@
 import "./App.css";
 import HomeContainer from "./components/container/homecontainer";
 import WhiteboardContainer from "./components/container/whiteboardcontainer";
+import TermsContainer from "./components/container/termscontainer";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import {
@@ -38,6 +39,8 @@ function App() {
           <Routes>
             <Route path="/" element={<HomeContainer />}></Route>
             <Route path="/whitelist" element={<WhiteboardContainer walletAddress = {walletAddress}/>}></Route>
+            <Route path="/terms" element={<TermsContainer/>}></Route>
+
           </Routes>
         </div>
       </div>

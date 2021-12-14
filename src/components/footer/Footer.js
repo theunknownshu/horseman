@@ -1,6 +1,7 @@
 import "./Footer.css";
 
 import { Stack, Typography, Button } from "@mui/material";
+import { Link } from "react-router-dom";
 function Footer() {
   return (
     <div className="container mt-5">
@@ -22,9 +23,7 @@ function Footer() {
           <Button
             variant="contained"
             style={{ backgroundColor: "black" }}
-            onClick={() =>
-              (window.location.href = "https://discord.gg/Fx4HeMGx")
-            }
+            onClick={() => window.open("https://discord.gg/Fx4HeMGx", "_blank")}
             sx={{
               borderRadius: "50%",
               width: "50px",
@@ -43,7 +42,7 @@ function Footer() {
           <Button
             variant="contained"
             onClick={() =>
-              (window.location.href = "https://twitter.com/HorsemanClubNFT")
+              window.open("https://twitter.com/HorsemanClubNFT", "_blank")
             }
             style={{ backgroundColor: "black" }}
             sx={{
@@ -76,7 +75,9 @@ function Footer() {
           </Button> */}
         </Stack>
         <Stack>
-          <a>Terms of Service</a>
+          <Link className="text-light" to="/terms">
+            Terms & Conditions
+          </Link>
         </Stack>
       </Stack>
     </div>

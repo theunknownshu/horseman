@@ -286,7 +286,7 @@ export default function WhiteBoard(props) {
           <Button
             // style={styles.whiteboard_button}
             sx={{ width: "50%" }}
-            onClick={handleSubmit}
+            
             variant="contained"
             disabled
           >
@@ -297,7 +297,7 @@ export default function WhiteBoard(props) {
         <Button
           style={styles.whiteboard_button}
           sx={{ position: "absolute", right: "10px" }}
-          onClick={handleSubmit}
+          
           variant="contained"
           onClick={() => navigate("/")}
 
