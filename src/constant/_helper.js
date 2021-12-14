@@ -103,20 +103,20 @@ export const team_json = [
 ];
 export const carousel_baseURL = "./assets/images/carousel/";
 export const carousel_imagename = [
-  "375.png",
-  "378.png",
-  "379.png",
-  "380.png",
-  "386.png",
-  "387.png",
-  "389.png",
-  "395.png",
-  "398.png",
-  "403.png",
-  "404.png",
-  "412.png",
-  "413.png",
-  "419.png"
+  // "5.png",
+  // "6.png",
+  // "11.png",
+  // "12.png",
+  // "14.png",
+  // "15.png",
+  // "18.png",
+  // "19.png",
+  // "20.png",
+  // "21.png",
+  // "24.png",
+  // "29.png",
+  // "43.png",
+  // "46.png"
 ];
 // export const nftlist_img_base = "";
 export const terms_condition_json = {
