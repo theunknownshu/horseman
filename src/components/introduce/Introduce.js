@@ -5,6 +5,12 @@ import { useNavigate } from "react-router-dom";
 
 function Introduce() {
   const navigate = useNavigate();
+  const styles = {
+    contentstyle: {
+      fontSize: ["1rem", "", "", "20px"],
+      fontFamily: `"Poppins", Sans-serif`
+    }
+  };
 
   return (
     <div id="id_introduce" className="container pt-5">
@@ -20,7 +26,7 @@ function Introduce() {
       </Typography>
       <br />
       <Typography
-        sx={{ fontSize: ["10px", "12px", "16px", "20px"] }}
+        style = {styles.contentstyle}
         className="mt-5"
         // dangerouslySetInnerHTML={{ __html: '<p>introduce_json.<br>content</p>' }}
       >
@@ -28,14 +34,14 @@ function Introduce() {
       </Typography>
       <br></br>
       <Typography
-        sx={{ fontSize: ["10px", "12px", "16px", "20px"] }}
+       style = {styles.contentstyle}
         // dangerouslySetInnerHTML={{ __html: '<p>introduce_json.<br>content</p>' }}
       >
         {introduce_json.content2}
       </Typography>
       <br></br>
       <Typography
-        sx={{ fontSize: ["10px", "12px", "16px", "20px"] }}
+       style = {styles.contentstyle}
         // dangerouslySetInnerHTML={{ __html: '<p>introduce_json.<br>content</p>' }}
       >
         {introduce_json.content3}

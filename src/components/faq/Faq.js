@@ -45,13 +45,13 @@ export default function Faqaccordion() {
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
-                  <Typography sx={{fontWeight:"600", fontSize: ["0.75rem", "1rem", "1.2rem"] }}>
+                  <Typography sx={{fontWeight:"600",  fontFamily: `"Montserrat", Sans-serif`,fontSize: ["1rem", "1.2rem", "1.4rem"] }}>
                     {faq.question}
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography
-                    sx={{ fontSize: ["0.55rem", "0.8rem", "0.9rem"] }}
+                    sx={{ fontSize: ["0.8rem", "1rem", "1rem"],   fontFamily: `"Poppins", Sans-serif`}}
                     align="left"
                   >
                     {faq.answer}
