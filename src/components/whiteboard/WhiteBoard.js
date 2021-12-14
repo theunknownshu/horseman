@@ -3,12 +3,17 @@ import { useState, useEffect } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useNavigate } from "react-router-dom";
 
-import { Typography, Button, TextField } from "@mui/material";
+import { Typography, Button, TextField, Snackbar } from "@mui/material";
 import { alpha, styled } from "@mui/material/styles";
 import { connectWallet } from "../../util/interact.js";
+import MuiAlert from "@mui/material/Alert";
 
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={3} ref={ref} variant="filled" {...props} />;
+});
 export default function WhiteBoard(props) {
   const navigate = useNavigate();
+  const [open, setOpen] = React.useState(false);
   const [walletAddress, setWalletAddress] = useState("");
   const [state_discord, setDiscord] = useState("");
   const [verify_discord, setDiscordVerification] = useState(false);
@@ -34,8 +39,15 @@ export default function WhiteBoard(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    setOpen(true);
   }
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
 
+    setOpen(false);
+  };
   /**
    *  Press connect button so that can connect to metamask */
   async function handleConnect(e) {
@@ -46,6 +58,11 @@ export default function WhiteBoard(props) {
 
   return (
     <div className="mt-5 container">
+      <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="warning" sx={{ width: "100%" }}>
+          Whitelist cannot join at this moment! Try again 16th December!
+        </Alert>
+      </Snackbar>
       <Typography
         variant="h3"
         sx={{
@@ -286,8 +303,8 @@ export default function WhiteBoard(props) {
           <Button
             // style={styles.whiteboard_button}
             sx={{ width: "50%" }}
-            
             variant="contained"
+            // onClick={handleSubmit}
             disabled
           >
             Submit
@@ -297,11 +314,8 @@ export default function WhiteBoard(props) {
         <Button
           style={styles.whiteboard_button}
           sx={{ position: "absolute", right: "10px" }}
-          
           variant="contained"
           onClick={() => navigate("/")}
-
-          // disabled
         >
           back
         </Button>
