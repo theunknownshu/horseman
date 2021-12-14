@@ -21,7 +21,7 @@ function Introduce() {
       <br />
       <Typography
         sx={{ fontSize: ["10px", "12px", "16px", "20px"] }}
-        className = "mt-5"
+        className="mt-5"
         // dangerouslySetInnerHTML={{ __html: '<p>introduce_json.<br>content</p>' }}
       >
         {introduce_json.content1}
@@ -44,7 +44,7 @@ function Introduce() {
       <br />
       <Button
         variant="contained"
-        className = "mt-5"
+        className="mt-5"
         onClick={() => navigate("/whitelist")}
         sx={{ borderRadius: "40px" }}
         style={{ backgroundColor: "black", padding: "15px 30px" }}
@@ -55,8 +55,8 @@ function Introduce() {
           Enter in the whitelist
         </Typography>
       </Button>
-     
-      <div className = "mt-5">
+
+      <div className="mt-5">
         {/* <Button
         
           variant="contained"
@@ -76,7 +76,7 @@ function Introduce() {
         <Button
           variant="contained"
           style={{ backgroundColor: "black" }}
-          onClick={() => (window.location.href = "https://discord.gg/Fx4HeMGx")}
+          onClick={() => window.open("https://discord.gg/Fx4HeMGx", "_blank")}
           sx={{
             borderRadius: "50%",
             width: "50px",
@@ -96,7 +96,7 @@ function Introduce() {
         <Button
           variant="contained"
           onClick={() =>
-            (window.location.href = "https://twitter.com/HorsemanClubNFT")
+            window.open("https://twitter.com/HorsemanClubNFT", "_blank")
           }
           style={{ backgroundColor: "black" }}
           sx={{

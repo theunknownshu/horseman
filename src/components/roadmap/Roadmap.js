@@ -119,10 +119,10 @@ function Roadmap() {
         variant="contained"
         sx={{ borderRadius: "20px", px: 5 }}
         style={{ backgroundColor: "black" }}
-        onClick={() =>
-          window.location.href =
-            "/https://the-horseman-club.gitbook.io/whiteboard/"
-        }
+        onClick={() => window.open("https://the-horseman-club.gitbook.io/whiteboard", "_blank")}
+        //   window.location.href =
+        //     "/https://the-horseman-club.gitbook.io/whiteboard/"
+        // }
       >
         
         Whiteboard

@@ -117,9 +117,7 @@ function Header() {
           <Button
             sx={{ borderRadius: "20px" }}
             style={{ backgroundColor: "black" }}
-            onClick={() =>
-              (window.location.href = "https://discord.gg/Fx4HeMGx")
-            }
+            onClick={() => window.open("https://discord.gg/Fx4HeMGx", "_blank")}
             variant="contained"
           >
             Join Discord

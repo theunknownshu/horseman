@@ -122,6 +122,7 @@ function Horsemap() {
       <Button
         variant="contained"
         className="mt-5"
+        onClick={() => window.open("https://the-horseman-club.gitbook.io/whiteboard", "_blank")}
         
         sx={{ borderRadius: "20px", px: 5 }}
         style={{ backgroundColor: "black" }}
