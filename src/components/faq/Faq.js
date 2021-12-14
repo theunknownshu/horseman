@@ -28,9 +28,9 @@ export default function Faqaccordion() {
             top: "20px"
           }}
         >
-          <img src={img_faq_golf} style={{ height: "400px" }}></img>
+          <img className = "show_faq_golf" src={img_faq_golf} style={{ height: "400px" }}></img>
         </div>
-        <div className="row" style={{ zIndex: 1000, paddingRight: "100px" }}>
+        <div className="row responsive_padding" style={{ zIndex: 1000}}>
           {faq_json.map((faq, index) => {
             return (
               <Accordion

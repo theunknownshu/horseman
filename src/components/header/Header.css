@@ -51,7 +51,7 @@ ul li button:focus {
 
 @media screen and (max-width:768px){
     .logo-image{
-        width:150px;
+        width:100px;
     }
     
 }

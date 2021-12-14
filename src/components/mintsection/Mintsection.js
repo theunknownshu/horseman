@@ -56,12 +56,11 @@ function Mintsection() {
           <Button
             className="btn-round py-2"
             variant="contained "
+            onClick={() => window.open("https://discord.gg/Fx4HeMGx", "_blank")}
             style={{
               color: "black",
               backgroundColor: "white",
               borderRadius: "30px"
-              
-
             }}
           >
             <Typography
@@ -73,16 +72,15 @@ function Mintsection() {
               Join Our Discord
             </Typography>
           </Button>
-          
 
           <Typography
             sx={{
               fontSize: ["0.8rem", "0.8rem", "1rem", "1rem"],
               fontFamily: `"Montserrat", Sans-serif`
             }}
-            className = "mt-2"
+            className="mt-2"
           >
-            <i style = {{color:"gray"}}>Verified Smart Contract</i>
+            <i style={{ color: "gray" }}>Verified Smart Contract</i>
           </Typography>
         </div>
       </div>

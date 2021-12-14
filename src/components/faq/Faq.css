@@ -5,3 +5,18 @@
     background-repeat: no-repeat;
     background-position: right;
 }
+.show_faq_golf{
+    display:flex;
+}
+.responsive_padding{
+    padding-right: 100px;
+}
+@media screen and (max-width:768px){
+    .show_faq_golf{
+        display:none;
+    }
+    .responsive_padding{
+        padding-right: 0;
+    }
+    
+}

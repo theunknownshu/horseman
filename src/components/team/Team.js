@@ -76,7 +76,7 @@ function Team() {
           <div className="row">
             {team_json.map((team, index) => {
               return (
-                <div className="col-sm-6 p-4">
+                <div className="col-sm-6 col-md-6 p-4">
                   <img src={team.avatar} style={{ width: "100%" }}></img>
                 </div>
               );
