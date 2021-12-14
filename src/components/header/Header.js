@@ -135,7 +135,7 @@ function Header() {
             style={{ backgroundColor: "black", padding: "8px", color: "white" }}
             aria-label="delete"
             onClick={() =>
-              (window.location.href = "https://twitter.com/HorsemanClubNFT")
+              window.open("https://twitter.com/HorsemanClubNFT", "_blank")
             }
             size="small"
           >
