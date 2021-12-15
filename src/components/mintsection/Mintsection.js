@@ -56,7 +56,7 @@ function Mintsection() {
           <Button
             className="btn-round py-2"
             variant="contained "
-            onClick={() => window.open("https://discord.gg/Fx4HeMGx", "_blank")}
+            onClick={() => window.open("https://discord.gg/g5D425QyWs", "_blank")}
             style={{
               color: "black",
               backgroundColor: "white",

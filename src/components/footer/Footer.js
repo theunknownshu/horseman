@@ -23,7 +23,7 @@ function Footer() {
           <Button
             variant="contained"
             style={{ backgroundColor: "black" }}
-            onClick={() => window.open("https://discord.gg/Fx4HeMGx", "_blank")}
+            onClick={() => window.open("https://discord.gg/g5D425QyWs", "_blank")}
             sx={{
               borderRadius: "50%",
               width: "50px",

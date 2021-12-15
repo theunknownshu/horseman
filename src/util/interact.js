@@ -7,15 +7,15 @@ const web3 = createAlchemyWeb3("https://eth-mainnet.alchemyapi.io/v2/iFWtTkSFMQq
 const contractABI = require("../contract-abi_new.json");
 const contractAddress = "0xa3363F6C6737AE48DeD6f81ed111f91fCF4f6754";
 
-export const DafeisContract = new web3.eth.Contract( contractABI, contractAddress );
+export const HorsemanContract = new web3.eth.Contract( contractABI, contractAddress );
 
 export const loadTotalMintCount = async () => {
-  var message = await DafeisContract.methods.totalMint().call();
+  var message = await HorsemanContract.methods.totalMint().call();
   return message;
 };
 
 export const getCurrentMessage = async () => {
-  var message = await DafeisContract.methods.message().call();
+  var message = await HorsemanContract.methods.message().call();
   return message;
 };
 
@@ -104,7 +104,7 @@ export const updateMessage = async (address, message) => {
   const transactionParameters = {
     to: contractAddress, // Required except during contract publications.
     from: address, // must match user's active address.
-    data: DafeisContract.methods.update(message).encodeABI(),
+    data: HorsemanContract.methods.update(message).encodeABI(),
   };
 
   //sign the transaction
@@ -145,9 +145,9 @@ export const mintDafeisCount = async (address, mintCount) => {
   const transactionParameters = {
     to: contractAddress, // Required except during contract publications.
     from: address, // must match user's active address.
-    value: web3.utils.toHex(web3.utils.toBN(`${33000000000000000*mintCount}`)),
+    value: web3.utils.toHex(web3.utils.toBN(`${40000000000000000*mintCount}`)),
     gasLimit: 62000,
-    data: DafeisContract.methods
+    data: HorsemanContract.methods
       .mint(address, mintCount)
       .encodeABI(),
   };
@@ -191,7 +191,7 @@ export const Reserve = async (address, mintCount) => {
   const transactionParameters = {
     to: contractAddress, // Required except during contract publications.
     from: address, // must match user's active address.
-    data: DafeisContract.methods
+    data: HorsemanContract.methods
       .reserve(mintCount)
       .encodeABI(),
   };
@@ -234,7 +234,7 @@ export const Pause = async (address, flag) => {
   const transactionParameters = {
     to: contractAddress, // Required except during contract publications.
     from: address, // must match user's active address.
-    data: DafeisContract.methods
+    data: HorsemanContract.methods
       .pause(flag)
       .encodeABI(),
   };
@@ -278,7 +278,7 @@ export const pauseMinting = async (address, value) => {
   const transactionParameters = {
     to: contractAddress, // Required except during contract publications.
     from: address, // must match user's active address.
-    data: DafeisContract.methods
+    data: HorsemanContract.methods
       .pause(value)
       .encodeABI(),
   };
@@ -313,7 +313,7 @@ export const withdrawAll = async (address, mintCount) => {
   const transactionParameters = {
     to: contractAddress, // Required except during contract publications.
     from: address, // must match user's active address.
-    data: DafeisContract.methods
+    data: HorsemanContract.methods
       .mint(address, mintCount)
       .encodeABI(),
   };

@@ -2,25 +2,35 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useNavigate } from "react-router-dom";
-
 import { Typography, Button, TextField, Snackbar } from "@mui/material";
 import { alpha, styled } from "@mui/material/styles";
 import { connectWallet } from "../../util/interact.js";
 import MuiAlert from "@mui/material/Alert";
+import axios from "axios";
+import { whiteboard_alerts_json } from "../../constant/_helper";
+
+require("dotenv").config();
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={3} ref={ref} variant="filled" {...props} />;
 });
+
 export default function WhiteBoard(props) {
-  const navigate = useNavigate();
+  /*
+   ***************************************  States ********************************************
+   */
   const [open, setOpen] = React.useState(false);
   const [walletAddress, setWalletAddress] = useState("");
   const [state_discord, setDiscord] = useState("");
   const [verify_discord, setDiscordVerification] = useState(false);
+  const [verify_discord_button_text, setVerifyDiscordText] = useState("Verify");
   const [verify_recaptcha, setRecaptcha] = useState(null);
   const [errors, setErrors] = useState();
+  const [errorMessage, setErrorMessage] = useState("Error");
   const [sub_but, setSubbut] = useState(false);
-  // const [verify_discord,setDiscordVerification] = useState(false);
+  const [alert_type, setAlertType] = useState(0);
+  const [alert_content, setAlertContent] = useState("");
+  const navigate = useNavigate();
   const styles = {
     whiteboard_button: {
       borderRadius: "20px",
@@ -39,7 +49,37 @@ export default function WhiteBoard(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    // if (
+    //   verify_discord === true &&
+    //   verify_recaptcha === true &&
+    //   walletAddress !== ""
+    // )
+    // {
+    //   const article = {
+    //     address: walletAddress,
+    //     discordUserName: state_discord
+    //   };
+    //   console.log(process.env.REACT_APP_BASE_API_URL + "signupwaitlist");
+    //   axios
+    //     .post(process.env.REACT_APP_BASE_API_URL + "signupwaitlist", article)
+    //     .then((response) => {
+    //       console.log("response=>", response);
+    //       if (response.data.success === true) {
+    //         setOpen(true);
+    //         setAlertType(1);
+    //         setAlertContent(
+    //           "Congratulations! You just added to whitelist on HorsemanClub!"
+    //         );
+    //       } else {
+    //         setOpen(true);
+    //         setAlertType(0);
+    //         setAlertContent(response.data.msg);
+    //       }
+    //     });
+    // }
     setOpen(true);
+    setAlertType(0);
+    setAlertContent("Sorry!Cannot join Whitelist right now. It will be opened in a day!");
   }
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
@@ -47,6 +87,13 @@ export default function WhiteBoard(props) {
     }
 
     setOpen(false);
+  };
+
+  /**
+   *  Press verify button. check verify discord button */
+
+  const handleVerifyDiscord = () => {
+    // console.log()
   };
   /**
    *  Press connect button so that can connect to metamask */
@@ -59,9 +106,41 @@ export default function WhiteBoard(props) {
   return (
     <div className="mt-5 container">
       <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="warning" sx={{ width: "100%" }}>
-          Whitelist cannot join at this moment! Try again 16th December!
-        </Alert>
+        {alert_type === 0 ? (
+          <Alert
+            onClose={handleClose}
+            severity="warning"
+            sx={{ width: "100%" }}
+          >
+            {alert_content}
+          </Alert>
+        ) : (
+          <Alert
+            onClose={handleClose}
+            severity="success"
+            sx={{ width: "100%" }}
+          >
+            {alert_content}
+          </Alert>
+        )}
+        {/* {alert_type === 0 && alert_type === 2 && (
+          <Alert
+            onClose={handleClose}
+            severity="success"
+            sx={{ width: "100%" }}
+          >
+            {whiteboard_alerts_json[alert_type]}
+          </Alert>
+        )}
+        {alert_type === 1 && alert_type === 3 && alert_type === 4 && (
+          <Alert
+            onClose={handleClose}
+            severity="warning"
+            sx={{ width: "100%" }}
+          >
+            {whiteboard_alerts_json[alert_type]}
+          </Alert>
+        )} */}
       </Snackbar>
       <Typography
         variant="h3"
@@ -162,14 +241,14 @@ export default function WhiteBoard(props) {
                 }}
                 className="text-light"
               >
-                https://discord.gg/Fx4HeMGx
+                https://discord.gg/g5D425QyWs
               </Typography>
             </div>
             <div className="col-sm-6">
               <Button
                 style={styles.whiteboard_button}
                 onClick={() =>
-                  (window.location.href = "https://discord.gg/Fx4HeMGx")
+                  window.open("https://discord.gg/g5D425QyWs", "_blank")
                 }
                 variant="contained"
               >
@@ -192,10 +271,10 @@ export default function WhiteBoard(props) {
             <div className="col-sm-6">
               <Button
                 style={styles.whiteboard_button}
-                onClick={() => console.log(state_discord)}
+                onClick={handleVerifyDiscord}
                 variant="contained"
               >
-                verify
+                {verify_discord_button_text}
               </Button>
             </div>
           </div>
@@ -304,7 +383,7 @@ export default function WhiteBoard(props) {
             // style={styles.whiteboard_button}
             sx={{ width: "50%" }}
             variant="contained"
-            // onClick={handleSubmit}
+            onClick={handleSubmit}
             disabled
           >
             Submit
