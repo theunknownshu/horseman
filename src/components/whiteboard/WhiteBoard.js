@@ -42,7 +42,7 @@ export default function WhiteBoard(props) {
     setWalletAddress(props.walletAddress);
   }, []);
   useEffect(() => {
-    if (verify_recaptcha !== null) {
+    if (verify_recaptcha !== null && verify_discord === true) {
       setSubbut(true);
     } else setSubbut(false);
   }, [verify_recaptcha]);
@@ -54,32 +54,32 @@ export default function WhiteBoard(props) {
     //   verify_recaptcha === true &&
     //   walletAddress !== ""
     // )
-    // {
-    //   const article = {
-    //     address: walletAddress,
-    //     discordUserName: state_discord
-    //   };
-    //   console.log(process.env.REACT_APP_BASE_API_URL + "signupwaitlist");
-    //   axios
-    //     .post(process.env.REACT_APP_BASE_API_URL + "signupwaitlist", article)
-    //     .then((response) => {
-    //       console.log("response=>", response);
-    //       if (response.data.success === true) {
-    //         setOpen(true);
-    //         setAlertType(1);
-    //         setAlertContent(
-    //           "Congratulations! You just added to whitelist on HorsemanClub!"
-    //         );
-    //       } else {
-    //         setOpen(true);
-    //         setAlertType(0);
-    //         setAlertContent(response.data.msg);
-    //       }
-    //     });
-    // }
-    setOpen(true);
-    setAlertType(0);
-    setAlertContent("Sorry!Cannot join Whitelist right now. It will be opened in a day!");
+    {
+      const article = {
+        address: walletAddress,
+        discordUserName: state_discord
+      };
+      console.log(process.env.REACT_APP_BASE_API_URL + "signupwaitlist");
+      axios
+        .post(process.env.REACT_APP_BASE_API_URL + "signupwaitlist", article)
+        .then((response) => {
+          console.log("response=>", response);
+          if (response.data.success === true) {
+            setOpen(true);
+            setAlertType(1);
+            setAlertContent(
+              "Congratulations! You just added to whitelist on HorsemanClub!"
+            );
+          } else {
+            setOpen(true);
+            setAlertType(0);
+            setAlertContent(response.data.msg);
+          }
+        });
+    }
+    // setOpen(true);
+    // setAlertType(0);
+    // setAlertContent("Sorry!Cannot join Whitelist right now. It will be opened in a day!");
   }
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
@@ -93,6 +93,30 @@ export default function WhiteBoard(props) {
    *  Press verify button. check verify discord button */
 
   const handleVerifyDiscord = () => {
+    console.log(process.env.REACT_APP_BASE_API_URL);
+    const article = {
+      discordUserName: state_discord
+    };
+    axios
+      .post(process.env.REACT_APP_BASE_API_URL + "discordVerify", article)
+      .then((response) => {
+        console.log("response=>", response);
+        if (response.data.success === true) {
+          setOpen(true);
+          setAlertType(1);
+          setAlertContent(
+            "We confirmed you are in our discord channel"
+          );
+          setVerifyDiscordText("Verified");
+          setDiscordVerification(true);
+        } else {
+          setOpen(true);
+          setAlertType(0);
+          setAlertContent(response.data.msg);
+          setVerifyDiscordText("Verify");
+          setDiscordVerification(false);
+        }
+      });
     // console.log()
   };
   /**
@@ -374,7 +398,6 @@ export default function WhiteBoard(props) {
             sx={{ width: "300px" }}
             onClick={handleSubmit}
             variant="contained"
-            // disabled
           >
             Submit
           </Button>
