@@ -59,11 +59,11 @@ export default function WhiteBoard(props) {
         address: walletAddress,
         discordUserName: state_discord
       };
-      console.log(process.env.REACT_APP_BASE_API_URL + "signupwaitlist");
+      // console.log(process.env.REACT_APP_BASE_API_URL + "signupwaitlist");
       axios
         .post(process.env.REACT_APP_BASE_API_URL + "signupwaitlist", article)
         .then((response) => {
-          console.log("response=>", response);
+          // console.log("response=>", response);
           if (response.data.success === true) {
             setOpen(true);
             setAlertType(1);
@@ -75,6 +75,18 @@ export default function WhiteBoard(props) {
             setAlertType(0);
             setAlertContent(response.data.msg);
           }
+        });
+        const API_discordRoleSetting = {
+          discordUserName:state_discord
+        };
+      axios
+        .post(process.env.REACT_APP_BASE_API_URL + "roleSetting", API_discordRoleSetting)
+        .then((response) => {
+            if(response.data.success === true){
+              console.log("you got new discord Role");
+            }
+            else
+              console.log("you cannot get new discord Role");
         });
     }
     // setOpen(true);
@@ -104,9 +116,7 @@ export default function WhiteBoard(props) {
         if (response.data.success === true) {
           setOpen(true);
           setAlertType(1);
-          setAlertContent(
-            "We confirmed you are in our discord channel"
-          );
+          setAlertContent("We confirmed you are in our discord channel");
           setVerifyDiscordText("Verified");
           setDiscordVerification(true);
         } else {
