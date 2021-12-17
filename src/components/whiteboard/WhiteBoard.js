@@ -76,17 +76,24 @@ export default function WhiteBoard(props) {
             setAlertContent(response.data.msg);
           }
         });
-        const API_discordRoleSetting = {
-          discordUserName:state_discord
-        };
+      const API_discordRoleSetting = {
+        discordUserName: state_discord
+      };
       axios
-        .post(process.env.REACT_APP_BASE_API_URL + "roleSetting", API_discordRoleSetting)
+        .post(
+          process.env.REACT_APP_BASE_API_URL + "roleSetting",
+          API_discordRoleSetting
+        )
         .then((response) => {
-            if(response.data.success === true){
-              console.log("you got new discord Role");
-            }
-            else
-              console.log("you cannot get new discord Role");
+          if (response.data.success === true) {
+            setOpen(true);
+            setAlertType(1);
+            setAlertContent("You just get New role(HORSE) on Discord!");
+          } else {
+            setOpen(true);
+            setAlertType(0);
+            setAlertContent("You already have (HORSE) ROLE on discord!");
+          }
         });
     }
     // setOpen(true);
