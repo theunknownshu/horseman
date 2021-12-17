@@ -30,7 +30,10 @@ export default function WhiteBoard(props) {
   const [sub_but, setSubbut] = useState(false);
   const [alert_type, setAlertType] = useState(0);
   const [alert_content, setAlertContent] = useState("");
+  const [whitelist_register_success, setWhitelistRegisterSuccess] =
+    useState(false);
   const navigate = useNavigate();
+
   const styles = {
     whiteboard_button: {
       borderRadius: "20px",
@@ -70,31 +73,35 @@ export default function WhiteBoard(props) {
             setAlertContent(
               "Congratulations! You just added to whitelist on HorsemanClub!"
             );
+            setWhitelistRegisterSuccess(true);
           } else {
             setOpen(true);
             setAlertType(0);
             setAlertContent(response.data.msg);
+            setWhitelistRegisterSuccess(false);
           }
         });
       const API_discordRoleSetting = {
         discordUserName: state_discord
       };
-      axios
-        .post(
-          process.env.REACT_APP_BASE_API_URL + "roleSetting",
-          API_discordRoleSetting
-        )
-        .then((response) => {
-          if (response.data.success === true) {
-            setOpen(true);
-            setAlertType(1);
-            setAlertContent("You just get New role(HORSE) on Discord!");
-          } else {
-            setOpen(true);
-            setAlertType(0);
-            setAlertContent("You already have (HORSE) ROLE on discord!");
-          }
-        });
+      if (whitelist_register_success === true) {
+        axios
+          .post(
+            process.env.REACT_APP_BASE_API_URL + "roleSetting",
+            API_discordRoleSetting
+          )
+          .then((response) => {
+            if (response.data.success === true) {
+              setOpen(true);
+              setAlertType(1);
+              setAlertContent("You just get New role(HORSE) on Discord!");
+            } else {
+              setOpen(true);
+              setAlertType(0);
+              setAlertContent("You already have (HORSE) ROLE on discord!");
+            }
+          });
+      }
     }
     // setOpen(true);
     // setAlertType(0);
