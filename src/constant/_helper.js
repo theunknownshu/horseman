@@ -139,7 +139,7 @@ export const global_styles = {
     fontFamily: `"Montserrat", Sans-serif`,
     fontWeight: "800"
   },
-  
+
   /* ---- Faq styles define----------- */
   faq_question_style: {
     fontWeight: "600",
@@ -159,8 +159,14 @@ export const global_styles = {
 
   /* -------------- Horesemap section style define --------------------*/
 
-  horsemap_content_responsive:{
+  horsemap_content_responsive: {
     fontSize: ["1rem", "", "1.1rem", "1.2rem"],
     fontFamily: `"Poppins", Sans-serif`
+  },
+
+  /* -------------- Mint section style define --------------------*/
+  mintsection_text: {
+    fontSize: ["1rem", "1rem", "1.2rem", "1.2rem"],
+    fontFamily: `"Montserrat", Sans-serif`
   }
 };

@@ -1,17 +1,12 @@
 import "./Mintsection.css";
 import { Typography, Button } from "@mui/material";
 import img_mint from "../../assets/images/img_mintsection.png";
+import { global_styles } from "../../constant/_helper";
+
 function Mintsection() {
   return (
     <div className="container pt-5">
-      <Typography
-        variant="h3"
-        sx={{
-          fontSize: ["1.5rem", "2rem", "3rem", "3rem"],
-          fontFamily: `"Montserrat", Sans-serif`,
-          fontWeight: "800"
-        }}
-      >
+      <Typography variant="h3" sx={global_styles.headerstyle}>
         MINT
       </Typography>
       <div
@@ -35,28 +30,20 @@ function Mintsection() {
             Mint is not available yet.
           </Typography>
 
-          <Typography
-            sx={{
-              fontSize: ["1rem", "1rem", "1.2rem", "1.2rem"],
-              fontFamily: `"Montserrat", Sans-serif`
-            }}
-          >
+          <Typography sx={global_styles.mintsection_text}>
             Presale and Public Sale Dates <b> Will Be Revealed Soon.</b>
           </Typography>
 
-          <Typography
-            sx={{
-              fontSize: ["1rem", "1rem", "1.2rem", "1.2rem"],
-              fontFamily: `"Montserrat", Sans-serif`
-            }}
-          >
+          <Typography sx={global_styles.mintsection_text}>
             Don't Miss Anything & Get Whitelisted!
           </Typography>
 
           <Button
             className="btn-round py-2"
             variant="contained "
-            onClick={() => window.open("https://discord.gg/g5D425QyWs", "_blank")}
+            onClick={() =>
+              window.open("https://discord.gg/g5D425QyWs", "_blank")
+            }
             style={{
               color: "black",
               backgroundColor: "white",
