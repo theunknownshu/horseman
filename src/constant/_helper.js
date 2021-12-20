@@ -155,8 +155,12 @@ export const global_styles = {
   header_discord_button_style: {
     borderRadius: "20px",
     backgroundColor: "black"
-  }
+  },
 
-  /* -------------- Introduce section style define --------------------*/
-  
+  /* -------------- Horesemap section style define --------------------*/
+
+  horsemap_content_responsive:{
+    fontSize: ["1rem", "", "1.1rem", "1.2rem"],
+    fontFamily: `"Poppins", Sans-serif`
+  }
 };
