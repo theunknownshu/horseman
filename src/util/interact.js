@@ -28,17 +28,20 @@ export const connectWallet = async () => {
       const obj = {
         status: "👆🏽 Write a message in the text-field above.",
         address: addressArray[0],
+        success:true
       };
       return obj;
     } catch (err) {
       return {
         address: "",
         status: "😥 " + err.message,
+        success:false
       };
     }
   } else {
     return {
       address: "",
+      success:false,
       status: (
         <span>
           <p>

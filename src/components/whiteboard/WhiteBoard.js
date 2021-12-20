@@ -2,7 +2,7 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useNavigate } from "react-router-dom";
-import { Typography, Button, TextField, Snackbar } from "@mui/material";
+import { Typography, Button, TextField, Snackbar,Modal, Box } from "@mui/material";
 import { alpha, styled } from "@mui/material/styles";
 import { connectWallet } from "../../util/interact.js";
 import MuiAlert from "@mui/material/Alert";
@@ -14,6 +14,19 @@ require("dotenv").config();
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={3} ref={ref} variant="filled" {...props} />;
 });
+
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
 
 export default function WhiteBoard(props) {
   /*
@@ -32,6 +45,9 @@ export default function WhiteBoard(props) {
   const [alert_content, setAlertContent] = useState("");
   const [whitelist_register_success, setWhitelistRegisterSuccess] =
     useState(false);
+  const [status, setStatus] = useState("");
+  const [modalopen, setModalOpen] = useState(false);
+
   const navigate = useNavigate();
 
   const styles = {
@@ -40,6 +56,9 @@ export default function WhiteBoard(props) {
       backgroundColor: "black"
     }
   };
+
+  const handleModalOpen = () => setModalOpen(true);
+  const handleModalClose = () => setModalOpen(false);
 
   useEffect(() => {
     setWalletAddress(props.walletAddress);
@@ -148,7 +167,40 @@ export default function WhiteBoard(props) {
   async function handleConnect(e) {
     e.preventDefault();
     const walletResponse = await connectWallet();
+    if(walletResponse.success === true)
+    {
+      addWalletListener();
+    }
+    else {
+      setStatus(walletResponse.status);
+      setModalOpen(true);
+    }
     setWalletAddress(walletResponse.address);
+  }
+
+  function addWalletListener() {
+    if (window.ethereum) {
+      window.ethereum.on("accountsChanged", (accounts) => {
+        if (accounts.length > 0) {
+          setWalletAddress(accounts[0]);
+          setStatus("👆🏽 Write a message in the text-field above.");
+        } else {
+          setWalletAddress("");
+          setStatus("🦊 Connect to Metamask using the above button.");
+        }
+      });
+    } else {
+      setStatus(
+        <p>
+          {" "}
+          🦊{" "}
+          <a target="_blank" href={`https://metamask.io/download.html`}>
+            You must install Metamask, a virtual Ethereum wallet, in your
+            browser.
+          </a>
+        </p>
+      );
+    }
   }
 
   return (
@@ -231,6 +283,8 @@ export default function WhiteBoard(props) {
                 <Button
                   variant="contained"
                   sx={{ backgroundColor: "transparent" }}
+                  onClick={handleConnect}
+
                 >
                   {walletAddress.length > 0 ? (
                     String(walletAddress).substring(0, 6) +
@@ -446,6 +500,19 @@ export default function WhiteBoard(props) {
           back
         </Button>
       </div>
+
+      <Modal
+        open={modalopen}
+        onClose={handleModalClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            {status}
+          </Typography>
+        </Box>
+      </Modal>
     </div>
   );
 }
