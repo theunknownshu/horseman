@@ -133,13 +133,14 @@ export const whiteboard_alerts_json = [
 ];
 
 export const global_styles = {
-  /* ---- Faq styles define----------- */
+  /* ---- Each secetion header styles define----------- */
   headerstyle: {
     fontSize: ["1.5rem", "2rem", "3rem", "3rem"],
     fontFamily: `"Montserrat", Sans-serif`,
     fontWeight: "800"
   },
-
+  
+  /* ---- Faq styles define----------- */
   faq_question_style: {
     fontWeight: "600",
     fontFamily: `"Montserrat", Sans-serif`,
@@ -155,4 +156,7 @@ export const global_styles = {
     borderRadius: "20px",
     backgroundColor: "black"
   }
+
+  /* -------------- Introduce section style define --------------------*/
+  
 };

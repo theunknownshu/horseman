@@ -11,7 +11,7 @@ import { global_styles } from "../../constant/_helper";
 export default function Faqaccordion() {
   return (
     <div id="id_faq" className="container pt-5">
-      <Typography variant="h3" style={global_styles.headerstyle}>
+      <Typography variant="h3" sx={global_styles.headerstyle}>
         FAQ
       </Typography>
       <div className="container px-5 mt-5" style={{ position: "relative" }}>
@@ -43,13 +43,13 @@ export default function Faqaccordion() {
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
-                  <Typography style={global_styles.faq_question_style}>
+                  <Typography sx={global_styles.faq_question_style}>
                     {faq.question}
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography
-                    style={global_styles.faq_answer_style}
+                    sx={global_styles.faq_answer_style}
                     align="left"
                   >
                     {faq.answer}
