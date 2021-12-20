@@ -4,7 +4,7 @@ import logo from "../../assets/images/logo.png";
 import { Button, IconButton } from "@mui/material";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { useNavigate, Link } from "react-router-dom";
-
+import { global_styles } from "../../constant/_helper";
 function Header() {
   const navigate = useNavigate();
 
@@ -115,8 +115,7 @@ function Header() {
           </button>
           &nbsp; */}
           <Button
-            sx={{ borderRadius: "20px" }}
-            style={{ backgroundColor: "black" }}
+            style = {global_styles.header_discord_button_style}
             onClick={() => window.open("https://discord.gg/g5D425QyWs", "_blank")}
             variant="contained"
           >

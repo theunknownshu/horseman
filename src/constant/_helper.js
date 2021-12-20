@@ -133,6 +133,7 @@ export const whiteboard_alerts_json = [
 ];
 
 export const global_styles = {
+  /* ---- Faq styles define----------- */
   headerstyle: {
     fontSize: ["1.5rem", "2rem", "3rem", "3rem"],
     fontFamily: `"Montserrat", Sans-serif`,
@@ -147,5 +148,11 @@ export const global_styles = {
   faq_answer_style: {
     fontSize: ["0.8rem", "1rem", "1rem"],
     fontFamily: `"Poppins", Sans-serif`
+  },
+
+  /* ---- Header styles define----------- */
+  header_discord_button_style: {
+    borderRadius: "20px",
+    backgroundColor: "black"
   }
 };
