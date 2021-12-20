@@ -2,7 +2,14 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useNavigate } from "react-router-dom";
-import { Typography, Button, TextField, Snackbar,Modal, Box } from "@mui/material";
+import {
+  Typography,
+  Button,
+  TextField,
+  Snackbar,
+  Modal,
+  Box
+} from "@mui/material";
 import { alpha, styled } from "@mui/material/styles";
 import { connectWallet } from "../../util/interact.js";
 import MuiAlert from "@mui/material/Alert";
@@ -15,17 +22,16 @@ const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={3} ref={ref} variant="filled" {...props} />;
 });
 
-
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
+  bgcolor: "background.paper",
+  border: "2px solid #000",
   boxShadow: 24,
-  p: 4,
+  p: 4
 };
 
 export default function WhiteBoard(props) {
@@ -167,11 +173,9 @@ export default function WhiteBoard(props) {
   async function handleConnect(e) {
     e.preventDefault();
     const walletResponse = await connectWallet();
-    if(walletResponse.success === true)
-    {
+    if (walletResponse.success === true) {
       addWalletListener();
-    }
-    else {
+    } else {
       setStatus(walletResponse.status);
       setModalOpen(true);
     }
@@ -284,7 +288,6 @@ export default function WhiteBoard(props) {
                   variant="contained"
                   sx={{ backgroundColor: "transparent" }}
                   onClick={handleConnect}
-
                 >
                   {walletAddress.length > 0 ? (
                     String(walletAddress).substring(0, 6) +
@@ -369,6 +372,20 @@ export default function WhiteBoard(props) {
                 sx={{ width: "80%" }}
                 onChange={(e) => setDiscord(e.target.value)}
               />
+              {verify_discord !== true && (
+                <div>
+                  <Typography
+                    sx={{
+                      // fontSize: ["0.8rem", "1rem", "1.2rem", "1.5rem"],
+                      fontFamily: `"poppins", Sans-serif`,
+                      // fontWeight: "800"
+                      color:"red"
+                    }}
+                  >
+                     ✨Remember that to join the whitelist you must reach level 10 on Discord
+                  </Typography>
+                </div>
+              )}
             </div>
             <div className="col-sm-6">
               <Button
