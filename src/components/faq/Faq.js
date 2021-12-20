@@ -7,17 +7,11 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { faq_json } from "../../constant/_helper";
 import "./Faq.css";
 import img_faq_golf from "../../assets/images/img_faq_golf.png";
+import { global_styles } from "../../constant/_helper";
 export default function Faqaccordion() {
   return (
     <div id="id_faq" className="container pt-5">
-      <Typography
-        variant="h3"
-        sx={{
-          fontSize: ["1.5rem", "2rem", "3rem", "3rem"],
-          fontFamily: `"Montserrat", Sans-serif`,
-          fontWeight: "800"
-        }}
-      >
+      <Typography variant="h3" style={global_styles.headerstyle}>
         FAQ
       </Typography>
       <div className="container px-5 mt-5" style={{ position: "relative" }}>
@@ -28,9 +22,13 @@ export default function Faqaccordion() {
             top: "20px"
           }}
         >
-          <img className = "show_faq_golf" src={img_faq_golf} style={{ height: "400px" }}></img>
+          <img
+            className="show_faq_golf"
+            src={img_faq_golf}
+            style={{ height: "400px" }}
+          ></img>
         </div>
-        <div className="row responsive_padding" style={{ zIndex: 1000}}>
+        <div className="row responsive_padding" style={{ zIndex: 1000 }}>
           {faq_json.map((faq, index) => {
             return (
               <Accordion
@@ -45,13 +43,13 @@ export default function Faqaccordion() {
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
-                  <Typography sx={{fontWeight:"600",  fontFamily: `"Montserrat", Sans-serif`,fontSize: ["1rem", "1.2rem", "1.4rem"] }}>
+                  <Typography style={global_styles.faq_question_style}>
                     {faq.question}
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography
-                    sx={{ fontSize: ["0.8rem", "1rem", "1rem"],   fontFamily: `"Poppins", Sans-serif`}}
+                    style={global_styles.faq_answer_style}
                     align="left"
                   >
                     {faq.answer}

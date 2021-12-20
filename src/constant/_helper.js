@@ -131,3 +131,21 @@ export const whiteboard_alerts_json = [
   "Sorry! Something is wrong. Please follow all steps!",
   "Sorry! Whitelist already full!"
 ];
+
+export const global_styles = {
+  headerstyle: {
+    fontSize: ["1.5rem", "2rem", "3rem", "3rem"],
+    fontFamily: `"Montserrat", Sans-serif`,
+    fontWeight: "800"
+  },
+
+  faq_question_style: {
+    fontWeight: "600",
+    fontFamily: `"Montserrat", Sans-serif`,
+    fontSize: ["1rem", "1.2rem", "1.4rem"]
+  },
+  faq_answer_style: {
+    fontSize: ["0.8rem", "1rem", "1rem"],
+    fontFamily: `"Poppins", Sans-serif`
+  }
+};
