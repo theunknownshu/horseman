@@ -1,16 +1,14 @@
 require("dotenv").config();
 // const rinkebyKey = process.env.REACT_APP_ALCHEMY_RINKEY;
 const mainnetKey = process.env.REACT_APP_ALCHEMY_MAINNET;
+const testnetKey = process.env.REACT_APP_ALCHEMY_RINKEY;
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
-var Web3 = require("web3");
+// var Web3 = require("web3");
 
-// const web3 = createAlchemyWeb3(
-//   "https://eth-mainnet.alchemyapi.io/v2/iFWtTkSFMQqMXNSWDv_4QqArmF1bIV4Y"
- 
-// );
-const web3 = new Web3(new Web3.providers.HttpProvider( "https://rinkeby.infura.io/v3/aba36d08da514e4897c41d9063574996"));
+const web3 = createAlchemyWeb3(testnetKey);
+// const web3 = new Web3(new Web3.providers.HttpProvider( "https://rinkeby.infura.io/v3/aba36d08da514e4897c41d9063574996"));
 const contractABI = require("../HorsemanContract.json");
-const contractAddress = "0xBf8c000f6806536BCBEa4EB45441fc576fC6C6b3";
+const contractAddress = process.env.REACT_APP_CONTRACT_ADDRESS;
 
 export const HorsemanContract = new web3.eth.Contract(
   contractABI,
@@ -27,6 +25,7 @@ export const getCurrentMessage = async () => {
   return message;
 };
 
+/** Connect to Metamask */
 export const connectWallet = async () => {
   if (window.ethereum) {
     try {
@@ -165,11 +164,11 @@ export const updateMessage = async (address, message) => {
 };
 
 export const mintHorseCount = async (address, mintCount, nftPrice) => {
-  console.log("parameter price==",nftPrice);
+  console.log("parameter price==", nftPrice);
   const correctPrice = web3.utils.toBN(
     web3.utils.toWei(nftPrice, "ether").toString()
   );
-    console.log("calced price",correctPrice);
+  console.log("calced price", correctPrice);
   // console.log(correctPrice*mintCount);
   // console.log(address);
   if (!window.ethereum || address === null) {
@@ -179,7 +178,7 @@ export const mintHorseCount = async (address, mintCount, nftPrice) => {
     };
   }
   //set up transaction parameters
-  
+
   let e;
   try {
     e = await HorsemanContract.methods.mint(address, mintCount).estimateGas({
