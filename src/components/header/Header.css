@@ -28,7 +28,11 @@
 .myheader{
     border-bottom: 1px solid black;
     padding:10px 0px;
-    
+    display:block;
+}
+.mymobileheader{
+    display:none;
+    padding:10px 10px;
 }
 ul li {
     margin:3px;
@@ -50,8 +54,14 @@ ul li button:focus {
 }
 
 @media screen and (max-width:768px){
-    .logo-image{
+    /* .logo-image{
         width:100px;
+    } */
+    .myheader{
+        display:none;
+    }
+    .mymobileheader{
+        display:block;
     }
     
 }
