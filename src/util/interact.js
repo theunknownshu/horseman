@@ -2,10 +2,13 @@ require("dotenv").config();
 // const rinkebyKey = process.env.REACT_APP_ALCHEMY_RINKEY;
 const mainnetKey = process.env.REACT_APP_ALCHEMY_MAINNET;
 const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
-const web3 = createAlchemyWeb3(
-  "https://eth-mainnet.alchemyapi.io/v2/iFWtTkSFMQqMXNSWDv_4QqArmF1bIV4Y"
-);
+var Web3 = require("web3");
 
+// const web3 = createAlchemyWeb3(
+//   "https://eth-mainnet.alchemyapi.io/v2/iFWtTkSFMQqMXNSWDv_4QqArmF1bIV4Y"
+ 
+// );
+const web3 = new Web3(new Web3.providers.HttpProvider( "https://rinkeby.infura.io/v3/aba36d08da514e4897c41d9063574996"));
 const contractABI = require("../HorsemanContract.json");
 const contractAddress = "0xBf8c000f6806536BCBEa4EB45441fc576fC6C6b3";
 
@@ -162,8 +165,11 @@ export const updateMessage = async (address, message) => {
 };
 
 export const mintHorseCount = async (address, mintCount, nftPrice) => {
-  console.log(nftPrice);
-  const correctPrice = web3.utils.toWei(`${nftPrice}`, "ether");
+  console.log("parameter price==",nftPrice);
+  const correctPrice = web3.utils.toBN(
+    web3.utils.toWei(nftPrice, "ether").toString()
+  );
+    console.log("calced price",correctPrice);
   // console.log(correctPrice*mintCount);
   // console.log(address);
   if (!window.ethereum || address === null) {
@@ -173,15 +179,16 @@ export const mintHorseCount = async (address, mintCount, nftPrice) => {
     };
   }
   //set up transaction parameters
-  console.log(mintCount);
+  
   let e;
   try {
     e = await HorsemanContract.methods.mint(address, mintCount).estimateGas({
-      value: correctPrice * mintCount,
+      // value: correctPrice * mintCount,
+      value: web3.utils.toHex(correctPrice * mintCount),
       from: address
     });
   } catch (u) {
-    console.log("catch fail",u);
+    console.log("catch fail", u);
     return { success: false, type: "estimategas" };
   }
   let d = await web3.eth.getGasPrice();
@@ -189,15 +196,16 @@ export const mintHorseCount = async (address, mintCount, nftPrice) => {
   const transactionParameters = {
     to: contractAddress, // Required except during contract publications.
     from: address, // must match user's active address.
-    gas: parseInt(e),
-    gasPrice: parseInt(1.2 * d),
+    gas: web3.utils.toHex(parseInt(e)),
+    gasPrice: web3.utils.toHex(parseInt(1.2 * d)),
     maxFeePerGas: null,
-    value: web3.utils.toHex(web3.utils.toBN(correctPrice * mintCount)),
+    // value: correctPrice * mintCount,
+    value: web3.utils.toHex(correctPrice * mintCount),
     // gasLimit: 21000,
     // gas: web3.utils.toHex(21000),
     data: HorsemanContract.methods.mint(address, mintCount).encodeABI()
   };
-  console.log(transactionParameters.value);
+  // console.log(transactionParameters.value);
   try {
     const txHash = await window.ethereum.request({
       method: "eth_sendTransaction",
@@ -219,7 +227,8 @@ export const mintHorseCount = async (address, mintCount, nftPrice) => {
           ℹ️ Once the transaction is verified by the network, the message will
           be updated automatically.
         </span>
-      )
+      ),
+      success: true
     };
   } catch (error) {
     console.log(error);

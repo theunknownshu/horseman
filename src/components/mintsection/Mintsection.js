@@ -13,16 +13,16 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 });
 function Mintsection(props) {
   const [mintCount, setMintingCount] = useState(1);
+  const [confirmMinted, setConfirmMinted] = useState("");
   const [nftPrice, setNftPrice] = useState(0.04);
   const [open, setOpen] = useState(false);
   const [alert_type, setAlertType] = useState(0);
   const [alert_content, setAlertContent] = useState("");
-  
 
   function handleOnMintButtonClick() {
     const walletAddress = props.walletAddress;
     console.log("buttonclick", walletAddress);
-    console.log("mintcount",mintCount);
+    console.log("mintcount", mintCount);
 
     const getMintData = {
       address: walletAddress,
@@ -31,14 +31,21 @@ function Mintsection(props) {
 
     axios
       .post(process.env.REACT_APP_BASE_API_URL + "getMintData", getMintData)
-      .then((response) => {
+      .then(async (response) => {
         // console.log("response=>", response);
         if (response.data.success === true) {
           setNftPrice(response.data.price);
           setOpen(true);
           setAlertType(1);
           setAlertContent("You can successfuly mint our HorsemanNFT!");
-          mintHorseCount(walletAddress, mintCount, response.data.price);
+          const result = await mintHorseCount(
+            walletAddress,
+            mintCount,
+            response.data.price
+          );
+          console.log("result->status",result.status);
+          if (result.success === true) setConfirmMinted(result.status);
+          // window.alert(result.status);
         } else {
           setOpen(true);
           setAlertType(0);
@@ -95,17 +102,14 @@ function Mintsection(props) {
           </Typography>
         </div>
       ) : ( */}
-      <div
-        className="btn-round my-card-container row p-5 mt-5"
-        style={{ maxWidth: "650px" }}
-      >
+      <div className="btn-round my-card-container row p-5 mt-5">
         <div
           className="col-sm-6 d-flex justify-content-center"
           style={{ padding: 0 }}
         >
           <img src={img_mint} style={{ width: "100%", padding: "10px" }}></img>
         </div>
-        <div className="col-sm-6">
+        <div className="col-sm-6 content-style">
           <Typography
             sx={{
               fontSize: ["1rem", "1rem", "1.2rem", "1.2rem"],
@@ -130,16 +134,17 @@ function Mintsection(props) {
           </Button>
 
           <TextField
-          id="standard-number"
-          label="Number"
-          type="number"
-          InputLabelProps={{
-            shrink: true
-          }}
-          sx = {{backgroundColor:"white"}}
-          variant="filled"
-          onChange={(e)=> setMintingCount(e.target.value)}
-        /> */}
+            id="standard-number"
+            label="Number"
+            type="number"
+            InputLabelProps={{
+              shrink: true
+            }}
+            sx={{ backgroundColor: "white" }}
+            variant="filled"
+            onChange={(e) => setMintingCount(e.target.value)}
+          /> */}
+
           <Typography sx={global_styles.mintsection_text}>
             Presale and Public Sale Dates <b> Will Be Revealed Soon.</b>
           </Typography>
