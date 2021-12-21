@@ -137,7 +137,10 @@ export const updateMessage = async (address, message) => {
 };
 
 export const mintHorseCount = async (address, mintCount,nftPrice) => {
-  const correctPrice = web3.utils.toBN(web3.utils.toWei(nftPrice));
+  console.log(nftPrice);
+  const correctPrice = web3.utils.toWei(`${nftPrice}`,"ether");
+  // console.log(correctPrice*mintCount);
+  // console.log(address);
   if (!window.ethereum || address === null) {
     return {
       status:

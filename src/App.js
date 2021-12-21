@@ -34,13 +34,18 @@ function App() {
       <div className="App">
         {/* <Header></Header> */}
         {/* <Customcarousel></Customcarousel> */}
-        
+
         <div className="">
           <Routes>
-            <Route path="/" element={<HomeContainer />}></Route>
-            <Route path="/whitelist" element={<WhiteboardContainer walletAddress = {walletAddress}/>}></Route>
-            <Route path="/terms" element={<TermsContainer/>}></Route>
-
+            <Route
+              path="/"
+              element={<HomeContainer walletAddress={walletAddress} />}
+            ></Route>
+            <Route
+              path="/whitelist"
+              element={<WhiteboardContainer walletAddress={walletAddress} />}
+            ></Route>
+            <Route path="/terms" element={<TermsContainer />}></Route>
           </Routes>
         </div>
       </div>

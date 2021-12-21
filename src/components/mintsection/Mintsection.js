@@ -2,8 +2,14 @@ import "./Mintsection.css";
 import { Typography, Button } from "@mui/material";
 import img_mint from "../../assets/images/img_mintsection.png";
 import { global_styles } from "../../constant/_helper";
+import { mintHorseCount } from "../../util/interact";
+import { useEffect, useState } from "react";
+function Mintsection(props) {
+  const [walletAddress, setWalletAddress] = useState("");
 
-function Mintsection() {
+  useEffect(() => {
+    setWalletAddress(props.walletAddress);
+  }, []);
   return (
     <div className="container pt-5">
       <Typography variant="h3" sx={global_styles.headerstyle}>
@@ -29,6 +35,19 @@ function Mintsection() {
           >
             Mint is not available yet.
           </Typography>
+
+          {/* <Button
+            className="btn-round py-2"
+            variant="contained "
+            onClick={() => mintHorseCount(walletAddress, 3, 0.04)}
+            style={{
+              color: "black",
+              backgroundColor: "white",
+              borderRadius: "30px"
+            }}
+          >
+            Mint
+          </Button> */}
 
           <Typography sx={global_styles.mintsection_text}>
             Presale and Public Sale Dates <b> Will Be Revealed Soon.</b>
