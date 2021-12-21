@@ -136,7 +136,8 @@ export const updateMessage = async (address, message) => {
   }
 };
 
-export const mintDafeisCount = async (address, mintCount) => {
+export const mintHorseCount = async (address, mintCount,nftPrice) => {
+  const correctPrice = web3.utils.toBN(web3.utils.toWei(nftPrice));
   if (!window.ethereum || address === null) {
     return {
       status:
@@ -148,7 +149,7 @@ export const mintDafeisCount = async (address, mintCount) => {
   const transactionParameters = {
     to: contractAddress, // Required except during contract publications.
     from: address, // must match user's active address.
-    value: web3.utils.toHex(web3.utils.toBN(`${40000000000000000*mintCount}`)),
+    value: correctPrice*mintCount,
     gasLimit: 62000,
     data: HorsemanContract.methods
       .mint(address, mintCount)
