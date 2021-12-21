@@ -16,7 +16,7 @@ function Footer() {
           <Typography sx={{ fontSize: ["0.7rem", "0.9rem", "1rem", "1.2rem"] }}>
             @2021 THE HORSEMAN CLUB
             <br></br>
-            Allright Reserved
+            All rights Reserved
           </Typography>
         </Stack>
         <Stack direction="row">
