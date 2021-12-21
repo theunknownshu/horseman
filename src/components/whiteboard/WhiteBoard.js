@@ -10,11 +10,11 @@ import {
   Modal,
   Box
 } from "@mui/material";
-import { alpha, styled } from "@mui/material/styles";
+// import { alpha, styled } from "@mui/material/styles";
 import { connectWallet } from "../../util/interact.js";
 import MuiAlert from "@mui/material/Alert";
 import axios from "axios";
-import { whiteboard_alerts_json } from "../../constant/_helper";
+// import { whiteboard_alerts_json } from "../../constant/_helper";
 
 require("dotenv").config();
 

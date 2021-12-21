@@ -15,7 +15,8 @@ export default function HomeContainer(props) {
       <div className="content-section">
         <Customcarousel></Customcarousel>
         <Introduce></Introduce>
-        <Mintsection walletAddress = {props.walletAddress}></Mintsection>
+        
+        <Mintsection checkMintable = {props.checkMintable} walletAddress = {props.walletAddress}></Mintsection>
         <Horsemap></Horsemap>
         <Faqaccordion></Faqaccordion>
         <Team></Team>
