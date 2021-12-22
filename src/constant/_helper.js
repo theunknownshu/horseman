@@ -1,32 +1,32 @@
 export const roadmap_json = [
   {
     percent: "0%",
-    text: "Horseman club community is open. Join us on Discord to enter in the whitelist and discover the reveal of pre-sale and public sale.",
+    text: "Horseman Club community is open. Join us on Discord to enter the whitelist and discover the reveal of pre-sale and public sale.",
     flag: "flag-0.png"
   },
   {
     percent: "25%",
-    text: "When 25% is reached we will make the first Giveaway for HORSERS. An airdrop of 10 NFTS will be given.",
+    text: "Once we reach 25% of the Horseman sell out, we'll make the first giveaway for holders. An airdrop of 10 NFTs will be given.",
     flag: "flag-1.png"
   },
   {
     percent: "50%",
-    text: "When 50% of the Horseman is reached we'll be donating $20,000 to a charity chosen by the community",
+    text: "Reaching 50% of the Horsemap means that we'll be donating 20,000$ to a charity chosen by the community",
     flag: "flag-2.png"
   },
   {
     percent: "70%",
-    text: "When 75% of the Horsemen sell out, we'll start setting up a member exclusive merchandise store and make a giveaway for HORSERS",
+    text: "75% sells out? We set up a member exclusive merchandise store and make giveaways for holders.",
     flag: "flag-3.png"
   },
   {
     percent: "100%",
-    text: "When 100% of the Horsemen sell out, we'll open the Private Discord for HORSERS. Special Events and Giveaways will be published monthly. Just for Holders!",
+    text: "And finally, with 100% sell out, we'll open the Private Discord for holders. Special Events and Giveaways will be published monthly. Just for Holders!",
     flag: "flag-3.png"
   },
   {
     percent: "",
-    text: "The commuinity is the most important part for us and every member is unique. Our secondary core aspect is to Join Metaverse with the identity and values that represent us. The Horsers will be whitelisted in the 3D Avatars to Join Metaverse as Horseman Club members."
+    text: "The community is the most important part for us and every member is unique. Our secondary core goal is to Join Metaverse with the identity and values that represent us. In the Horsemap 2.0 & 3.0 we will introduce the Bridge to the Metaverse, where holders will be whitelisted in the 3D Avatars to Join Metaverse as Horseman Club members."
   }
 ];
 export const faq_json = [
@@ -82,22 +82,27 @@ export const introduce_json = {
 export const team_json = [
   {
     role: "CEO",
-    name: "Arthur",
+    role_describe: "POWERHORSE",
+    name: "ARTHUR",
     avatar: "./assets/images/team/img_team_arthur.jpg"
   },
   {
     role: "Designer",
-    name: "Thierry",
+    name: "THIERRY",
+    role_describe: "HORSEDAYDREAMER",
     avatar: "./assets/images/team/img_team_thierry.jpg"
   },
   {
     role: "Developer",
-    name: "Martin",
+    name: "MARTIN",
+    role_describe: "GAME ADDICTED",
+
     avatar: "./assets/images/team/img_team_martin.jpg"
   },
   {
     role: "developer",
-    name: "Oliver",
+    name: "OLIVER",
+    role_describe: "CODE SPEAKER",
     avatar: "./assets/images/team/img_team_oliver.jpg"
   }
 ];

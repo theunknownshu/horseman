@@ -42,31 +42,17 @@ function Team() {
               wanted to join and share their art and love for the blockchain
             </Typography>
             <br></br>
-            <Typography
-              sx={{ fontFamily: `"Poppins", Sans-serif`, fontWeight: 800 }}
-              className="text-dark"
-            >
-              ARTHUR&nbsp;
-              <span className="text-white">POWERHORSE</span>
-            </Typography>
-            <Typography
-              sx={{ fontFamily: `"Poppins", Sans-serif`, fontWeight: 800 }}
-              className="text-dark"
-            >
-              THIERRY&nbsp; <span className="text-white">HORSEDAYDREAMER</span>
-            </Typography>
-            <Typography
-              sx={{ fontFamily: `"Poppins", Sans-serif`, fontWeight: 800 }}
-              className="text-dark"
-            >
-              MARTIN&nbsp;<span className="text-white">GAME ADDICTED</span>
-            </Typography>
-            <Typography
-              sx={{ fontFamily: `"Poppins", Sans-serif`, fontWeight: 800 }}
-              className="text-dark"
-            >
-              OLIVER&nbsp;<span className="text-white">CODE SPEAKER</span>
-            </Typography>
+            {team_json.map((team, index) => {
+              return (
+                <Typography
+                  sx={{ fontFamily: `"Poppins", Sans-serif`, fontWeight: 800 }}
+                  className="text-dark"
+                >
+                  {team.name}&nbsp;
+                  <span className="text-white">{team.role_describe}</span>
+                </Typography>
+              );
+            })}
           </div>
         </div>
         <div className="col-md-6">
@@ -75,6 +61,16 @@ function Team() {
               return (
                 <div className="col-sm-6 col-md-6 p-4">
                   <img src={team.avatar} style={{ width: "100%" }}></img>
+                  <Typography
+                    sx={{
+                      fontFamily: `"Poppins", Sans-serif`,
+                      fontWeight: 800
+                    }}
+                    className="text-dark"
+                  >
+                    {team.name}
+                    {/* <span className="text-white">CODE SPEAKER</span> */}
+                  </Typography>
                 </div>
               );
             })}
