@@ -7,7 +7,7 @@ import "./Carousel.css";
 function Customcarousel() {
   const imageUrlArray = [];
 
-  for (let i = 1; i <= 73; i++) {
+  for (let i = 1; i <= 57; i++) {
     imageUrlArray.push(
       <div className="">
         <img

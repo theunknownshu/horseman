@@ -7,7 +7,7 @@ function Introduce() {
   const navigate = useNavigate();
   const styles = {
     contentstyle: {
-      fontSize: ["1rem", "1.3 rem", "1.5 rem", "1.7rem"],
+      fontSize: ["1rem", "1.1 rem", "1.2 rem", "1.3rem"],
       fontFamily: `"Poppins", Sans-serif`
     },
     buttonstyle: {
