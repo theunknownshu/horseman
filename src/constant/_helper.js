@@ -73,11 +73,11 @@ export const faq_json = [
 export const introduce_json = {
   title: "WELCOME TO THE HORSEMAN CLUB",
   content1:
-    "In the heaven of Metaverse, there's a community of winning horseman. In a fast-paced and transitioned world, just the fastest will be the first ones to reach power in the future.",
+    "In the heaven of Metaverse, there's a community of winning horseman. In a fast-paced and transitioned world, just the fastest ones will be the first on reaching power in the future.",
   content2:
-    "The Horseman Club is a distinctive collection of 10,000 art pieces that lie in the ERC-721. Each one of these tokens is unique and indomitable and rules his own life. These are thoughtfully designed, specifically picked, and impeccably shaped, and there are more than 200 distinctive traits.",
+    "The Horseman Club is a distinctive collection of 10,000 art pieces that lie in the ERC-721. Each one of this tokens is unique, indomitable and rules his life by building his own path. These NFTs are thoughtfully designed, specifically picked and impeccably shaped, and there are more than 170 distinctive traits.",
   content3:
-    "We are excited about the future and the community is the core aspect of The Horseman Club. We want that every holder has the power and is representative of Horseman with access to giveaways, events and a lot more. Join us on our adventure and our club, and let's rule the metaverse."
+    "We are excited for creating the wildest community ever and to show all of you our future updates. We want that every holder has the power and is representative of Horseman with. We aim to endow holders with a powerful aura and we want you to feel represented with your own Horseman, which will grant you access on giveaways, events and a lot more. Stick with us through this journey to the glory and let's rule the metaverse."
 };
 export const team_json = [
   {
