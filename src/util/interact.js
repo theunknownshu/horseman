@@ -407,3 +407,12 @@ export const withdrawAll = async (address, mintCount) => {
     };
   }
 };
+
+// export const getCurrentWalletBalance = async (address) => {
+//   await web3.eth.getBalance(address, (err, balance) => {
+//     console.log(address + " Balance: ", web3.utils.fromWei(balance));
+//     window.alert(web3.utils.fromWei(balance));
+//     // return { amount: web3.utils.fromWei(balance) };
+//   });
+//   // return balance;
+// };

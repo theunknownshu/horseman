@@ -8,13 +8,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import {
-  DafeisContract,
+  getCurrentWalletBalance,
   connectWallet,
-  loadTotalMintCount,
-  getCurrentWalletConnected,
-  mintDafeisCount,
-  Reserve,
-  Pause
 } from "./util/interact.js";
 require("dotenv").config();
 const style = {
@@ -38,6 +33,8 @@ function App() {
   const handleModalClose = () => setModalOpen(false);
   useEffect(async () => {
     const walletResponse = await connectWallet();
+
+    
     if (walletResponse.success === true) {
       addWalletListener();
     } else {
@@ -62,7 +59,9 @@ function App() {
 
           setFlagCheckMintable(response.data.success);
         });
+      //  getCurrentWalletBalance(walletAddress);
     }
+
   }, [walletAddress]);
 
   function addWalletListener() {
