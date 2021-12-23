@@ -44,25 +44,25 @@ function App() {
     setWalletAddress(walletResponse.address);
   }, []);
 
-  useEffect(() => {
-    const checkMintable = {
-      address: walletAddress
-    };
-    if (walletAddress !== "") {
-      axios
-        .post(
-          process.env.REACT_APP_BASE_API_URL + "checkMintable",
-          checkMintable
-        )
-        .then((response) => {
-          // console.log("response=>", response);
+  // useEffect(() => {
+  //   const checkMintable = {
+  //     address: walletAddress
+  //   };
+  //   if (walletAddress !== "") {
+  //     axios
+  //       .post(
+  //         process.env.REACT_APP_BASE_API_URL + "checkMintable",
+  //         checkMintable
+  //       )
+  //       .then((response) => {
+  //         // console.log("response=>", response);
 
-          setFlagCheckMintable(response.data.success);
-        });
-      //  getCurrentWalletBalance(walletAddress);
-    }
+  //         setFlagCheckMintable(response.data.success);
+  //       });
+  //     //  getCurrentWalletBalance(walletAddress);
+  //   }
 
-  }, [walletAddress]);
+  // }, [walletAddress]);
 
   function addWalletListener() {
     if (window.ethereum) {
