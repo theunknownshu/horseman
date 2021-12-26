@@ -88,6 +88,7 @@ export default function WhiteBoard(props) {
         discordUserName: state_discord
       };
       // console.log(process.env.REACT_APP_BASE_API_URL + "signupwaitlist");
+
       axios
         .post(process.env.REACT_APP_BASE_API_URL + "signupwaitlist", article)
         .then((response) => {
@@ -99,6 +100,33 @@ export default function WhiteBoard(props) {
               "Congratulations! You just added to whitelist on HorsemanClub!"
             );
             setWhitelistRegisterSuccess(true);
+
+            const API_discordRoleSetting = {
+              discordUserName: state_discord
+            };
+            // if (whitelist_register_success === true) {
+
+            axios
+              .post(
+                process.env.REACT_APP_BASE_API_URL + "roleSetting",
+                API_discordRoleSetting
+              )
+              .then((response) => {
+                if (response.data.success === true) {
+                  setOpen(true);
+                  setAlertType(1);
+                  setAlertContent(
+                    "You just get New role(HORSEMAN whiltelisted) on Discord!"
+                  );
+                } else {
+                  setOpen(true);
+                  setAlertType(0);
+                  setAlertContent(
+                    "You already have (HORSEMAN whiltelisted) ROLE on discord!"
+                  );
+                }
+              });
+            // }
           } else {
             setOpen(true);
             setAlertType(0);
@@ -106,31 +134,8 @@ export default function WhiteBoard(props) {
             setWhitelistRegisterSuccess(false);
           }
         });
-      const API_discordRoleSetting = {
-        discordUserName: state_discord
-      };
-      if (whitelist_register_success === true) {
-        axios
-          .post(
-            process.env.REACT_APP_BASE_API_URL + "roleSetting",
-            API_discordRoleSetting
-          )
-          .then((response) => {
-            if (response.data.success === true) {
-              setOpen(true);
-              setAlertType(1);
-              setAlertContent("You just get New role(HORSEMAN whiltelisted) on Discord!");
-            } else {
-              setOpen(true);
-              setAlertType(0);
-              setAlertContent("You already have (HORSEMAN whiltelisted) ROLE on discord!");
-            }
-          });
-      }
     }
-    // setOpen(true);
-    // setAlertType(0);
-    // setAlertContent("Sorry!Cannot join Whitelist right now. It will be opened in a day!");
+    
   }
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
@@ -144,14 +149,12 @@ export default function WhiteBoard(props) {
    *  Press verify button. check verify discord button */
 
   const handleVerifyDiscord = () => {
-    console.log(process.env.REACT_APP_BASE_API_URL);
     const article = {
       discordUserName: state_discord
     };
     axios
       .post(process.env.REACT_APP_BASE_API_URL + "discordVerify", article)
       .then((response) => {
-        console.log("response=>", response);
         if (response.data.success === true) {
           setOpen(true);
           setAlertType(1);
@@ -379,10 +382,11 @@ export default function WhiteBoard(props) {
                       // fontSize: ["0.8rem", "1rem", "1.2rem", "1.5rem"],
                       fontFamily: `"poppins", Sans-serif`,
                       // fontWeight: "800"
-                      color:"red"
+                      color: "red"
                     }}
                   >
-                     ✨Remember that to join the whitelist you must reach level 10 on Discord
+                    ✨Remember that to join the whitelist you must reach level
+                    10 on Discord
                   </Typography>
                 </div>
               )}
