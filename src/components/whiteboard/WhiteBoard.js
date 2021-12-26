@@ -40,12 +40,11 @@ export default function WhiteBoard(props) {
    */
   const [open, setOpen] = React.useState(false);
   const [walletAddress, setWalletAddress] = useState("");
-  const [state_discord, setDiscord] = useState("");
+  const [discord_userName, setDiscord] = useState("");//discord User Name
   const [verify_discord, setDiscordVerification] = useState(false);
   const [verify_discord_button_text, setVerifyDiscordText] = useState("Verify");
   const [verify_recaptcha, setRecaptcha] = useState(null);
   const [errors, setErrors] = useState();
-  const [errorMessage, setErrorMessage] = useState("Error");
   const [sub_but, setSubbut] = useState(false);
   const [alert_type, setAlertType] = useState(0);
   const [alert_content, setAlertContent] = useState("");
@@ -85,7 +84,7 @@ export default function WhiteBoard(props) {
     {
       const article = {
         address: walletAddress,
-        discordUserName: state_discord
+        discordUserName: discord_userName
       };
       // console.log(process.env.REACT_APP_BASE_API_URL + "signupwaitlist");
 
@@ -102,7 +101,7 @@ export default function WhiteBoard(props) {
             setWhitelistRegisterSuccess(true);
 
             const API_discordRoleSetting = {
-              discordUserName: state_discord
+              discordUserName: discord_userName
             };
             // if (whitelist_register_success === true) {
 
@@ -150,7 +149,7 @@ export default function WhiteBoard(props) {
 
   const handleVerifyDiscord = () => {
     const article = {
-      discordUserName: state_discord
+      discordUserName: discord_userName
     };
     axios
       .post(process.env.REACT_APP_BASE_API_URL + "discordVerify", article)
