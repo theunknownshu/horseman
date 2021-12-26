@@ -119,11 +119,11 @@ export default function WhiteBoard(props) {
             if (response.data.success === true) {
               setOpen(true);
               setAlertType(1);
-              setAlertContent("You just get New role(HORSE) on Discord!");
+              setAlertContent("You just get New role(HORSEMAN whiltelisted) on Discord!");
             } else {
               setOpen(true);
               setAlertType(0);
-              setAlertContent("You already have (HORSE) ROLE on discord!");
+              setAlertContent("You already have (HORSEMAN whiltelisted) ROLE on discord!");
             }
           });
       }
