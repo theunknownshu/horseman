@@ -520,6 +520,7 @@ export default function WhiteBoard(props) {
           back
         </Button>
       </div>
+      <br></br>
 
       <Modal
         open={modalopen}
