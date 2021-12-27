@@ -502,7 +502,7 @@ export default function WhiteBoard(props) {
         ) : (
           <Button
             // style={styles.whiteboard_button}
-            sx={{ width: "50%" }}
+            sx={ styles.whiteboard_button }
             variant="contained"
             onClick={handleSubmit}
             disabled
