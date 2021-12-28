@@ -85,21 +85,21 @@ export const team_json = [
     role_describe: "POWERHORSE",
     name: "ARTHUR",
     avatar: "./assets/images/team/img_team_arthur.jpg",
-    linkedIn:"https://www.linkedin.com/in/oliver-allen-b2949a222/"
+    // linkedIn:"https://www.linkedin.com/in/oliver-allen-b2949a222/"
   },
   {
     role: "Designer",
     name: "THIERRY",
     role_describe: "HORSEDAYDREAMER",
     avatar: "./assets/images/team/img_team_thierry.jpg",
-    linkedIn:"https://www.linkedin.com/in/oliver-allen-b2949a222/"
+    // linkedIn:"https://www.linkedin.com/in/oliver-allen-b2949a222/"
   },
   {
-    role: "Developer",
+    role: "Commuinity",
     name: "MARTIN",
     role_describe: "GAME ADDICTED",
     avatar: "./assets/images/team/img_team_martin.jpg",
-    linkedIn:"https://www.linkedin.com/in/oliver-allen-b2949a222/"
+    // linkedIn:"https://www.linkedin.com/in/oliver-allen-b2949a222/"
   },
   {
     role: "developer",
