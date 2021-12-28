@@ -64,7 +64,7 @@ function Team() {
                     className="team_img"
                     src={team.avatar}
                     style={{ width: "100%" }}
-                    onClick={() => window.open(`${team.linkedIn}`, "_blank")}
+                    // onClick={() => window.open(`${team.linkedIn}`, "_blank")}
                   ></img>
                   <Typography
                     sx={{

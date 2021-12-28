@@ -106,7 +106,7 @@ export const team_json = [
     name: "OLIVER",
     role_describe: "CODE SPEAKER",
     avatar: "./assets/images/team/img_team_oliver.jpg",
-    linkedIn:"https://www.linkedin.com/in/oliver-allen-b2949a222/"
+    // linkedIn:"https://www.linkedin.com/in/oliver-allen-b2949a222/"
   }
 ];
 export const carousel_baseURL = "./assets/images/carousel/";
