@@ -10,6 +10,9 @@
 .team-padding{
     padding:10px 30px;
 }
+.team_img:hover{
+    opacity: 80%;
+}
 @media screen and (max-width:768px){
     .img-avatar-size{
         width:30px;

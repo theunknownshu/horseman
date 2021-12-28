@@ -60,7 +60,12 @@ function Team() {
             {team_json.map((team, index) => {
               return (
                 <div className="col-sm-6 col-md-6 p-4">
-                  <img src={team.avatar} style={{ width: "100%" }}></img>
+                  <img
+                    className="team_img"
+                    src={team.avatar}
+                    style={{ width: "100%" }}
+                    onClick={() => window.open(`${team.linkedIn}`, "_blank")}
+                  ></img>
                   <Typography
                     sx={{
                       fontFamily: `"Poppins", Sans-serif`,

@@ -493,7 +493,7 @@ export default function WhiteBoard(props) {
         {sub_but === true ? (
           <Button
             style={styles.whiteboard_button}
-            sx={{ width: "300px" }}
+            // sx={{ width: "300px" }}
             onClick={handleSubmit}
             variant="contained"
           >

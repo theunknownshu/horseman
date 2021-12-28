@@ -84,26 +84,29 @@ export const team_json = [
     role: "CEO",
     role_describe: "POWERHORSE",
     name: "ARTHUR",
-    avatar: "./assets/images/team/img_team_arthur.jpg"
+    avatar: "./assets/images/team/img_team_arthur.jpg",
+    linkedIn:"https://www.linkedin.com/in/oliver-allen-b2949a222/"
   },
   {
     role: "Designer",
     name: "THIERRY",
     role_describe: "HORSEDAYDREAMER",
-    avatar: "./assets/images/team/img_team_thierry.jpg"
+    avatar: "./assets/images/team/img_team_thierry.jpg",
+    linkedIn:"https://www.linkedin.com/in/oliver-allen-b2949a222/"
   },
   {
     role: "Developer",
     name: "MARTIN",
     role_describe: "GAME ADDICTED",
-
-    avatar: "./assets/images/team/img_team_martin.jpg"
+    avatar: "./assets/images/team/img_team_martin.jpg",
+    linkedIn:"https://www.linkedin.com/in/oliver-allen-b2949a222/"
   },
   {
     role: "developer",
     name: "OLIVER",
     role_describe: "CODE SPEAKER",
-    avatar: "./assets/images/team/img_team_oliver.jpg"
+    avatar: "./assets/images/team/img_team_oliver.jpg",
+    linkedIn:"https://www.linkedin.com/in/oliver-allen-b2949a222/"
   }
 ];
 export const carousel_baseURL = "./assets/images/carousel/";
