@@ -61,7 +61,7 @@ function Team() {
               return (
                 <div className="col-sm-6 col-md-6 p-4">
                   <img
-                    className="team_img"
+                    // className="team_img"
                     src={team.avatar}
                     style={{ width: "100%" }}
                     // onClick={() => window.open(`${team.linkedIn}`, "_blank")}
